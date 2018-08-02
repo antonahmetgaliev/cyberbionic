@@ -1,0 +1,17 @@
+﻿<Window x:Class="HomeWorkLess1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HomeWorkLess1"
+        mc:Ignorable="d"
+        Title="Less1HomeW" Height="193.5" Width="299">
+    <Grid Margin="0,0,20,9">
+        <Button Content="do" HorizontalAlignment="Left" Height="32" Margin="10,102,0,0" VerticalAlignment="Top" Width="80" Click="Button_Click"/>
+        <Label Content="read" HorizontalAlignment="Left" Height="23" Margin="10,46,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="tb2" HorizontalAlignment="Left" Height="23" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" IsEnabled="False"/>
+        <Label Content="write" HorizontalAlignment="Left" Height="23" Margin="10,0,0,0" VerticalAlignment="Top" Width="61"/>
+        <TextBox x:Name="tb1" HorizontalAlignment="Left" Height="23" Margin="10,23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+
+    </Grid>
+</Window>
