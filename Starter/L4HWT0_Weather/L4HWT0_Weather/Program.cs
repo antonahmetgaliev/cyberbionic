@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace L4HWeatherToday0_Weather
+namespace L4HWT0_Weather
 {
     class Program
     {
