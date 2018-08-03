@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace L4HWT2_calculator
+namespace L4HWT2_Outputator
 {
     class Program
     {        
@@ -22,19 +22,19 @@ namespace L4HWT2_calculator
                     case "+":
                         {
                             int rez = operand1 + operand2;
-                            Calcul(operand1,operand2,arf,rez);
+                            Output(operand1,operand2,arf,rez);
                             break;
                         }
                     case "-":
                         {
                             int rez = operand1 - operand2;
-                            Calcul(operand1, operand2, arf, rez);
+                            Output(operand1, operand2, arf, rez);
                             break;
                         }
                     case "*":
                         {
                             int rez = operand1 * operand2;
-                            Calcul(operand1, operand2, arf, rez);
+                            Output(operand1, operand2, arf, rez);
                             break;
                         }
                     case "/":
@@ -42,7 +42,7 @@ namespace L4HWT2_calculator
                             if (operand2 != 0)
                             {
                                 int rez = operand1 / operand2;
-                                Calcul(operand1, operand2, arf, rez);
+                                Output(operand1, operand2, arf, rez);
                                 break;
                             }
                             else
@@ -56,7 +56,7 @@ namespace L4HWT2_calculator
                             if (operand2 != 0)
                             {
                                 int rez = operand1 % operand2;
-                                Calcul(operand1, operand2, arf, rez);
+                                Output(operand1, operand2, arf, rez);
                                 break;
                             }
                             else
@@ -80,7 +80,7 @@ namespace L4HWT2_calculator
                 if (choise == "N") return false;
                 else return true;
             }
-            void Calcul(int operand1, int operand2, string arifmat, int rez)
+            void Output(int operand1, int operand2, string arifmat, int rez)
             {
                 Console.WriteLine("{0} {3} {1} = {2}", operand1, operand2, rez, arifmat);
             }
