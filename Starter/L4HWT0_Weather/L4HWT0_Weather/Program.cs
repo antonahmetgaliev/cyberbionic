@@ -5,7 +5,7 @@ namespace L4HWT0_Weather
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
             bool exx = false;
             while (exx != true)
             {
@@ -15,7 +15,8 @@ namespace L4HWT0_Weather
                 {
                     case "?":
                         Console.WriteLine("(Хорошая,Плохая,Нормальная,Солнечная,Облачная,Дождь,Ливень,Гроза,Снегопад,Град");
-                        {exx = true; break;};
+                        Console.WriteLine();
+                        break;
                     case "Хорошая":
                         Console.WriteLine("{0} =  Good.", WeatherToday);
                         if (Ques()) {exx = true; break;} else break;
