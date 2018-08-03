@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace L4HWT2_Outputator
+namespace L4HWT2_Calculator
 {
     class Program
     {        
