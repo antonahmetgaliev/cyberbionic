@@ -21,22 +21,30 @@ namespace L4HWT2_calculator
                 {
                     case "+":
                         {
-                            Calcul(operand1,operand2,arf);
+                            int rez = operand1 + operand2;
+                            Calcul(operand1,operand2,arf,rez);
                             break;
                         }
                     case "-":
                         {
-                            Calcul(operand1, operand2, arf);
+                            int rez = operand1 - operand2;
+                            Calcul(operand1, operand2, arf, rez);
                             break;
                         }
                     case "*":
-                        {                            
-                            Calcul(operand1, operand2, arf);
+                        {
+                            int rez = operand1 * operand2;
+                            Calcul(operand1, operand2, arf, rez);
                             break;
                         }
                     case "/":
                         {
-                            if (operand2 != 0) Calcul(operand1, operand2, arf);                            
+                            if (operand2 != 0)
+                            {
+                                int rez = operand1 / operand2;
+                                Calcul(operand1, operand2, arf, rez);
+                                break;
+                            }
                             else
                             {
                                 Console.WriteLine("На 0 делить запрещено!\n");                                                           
@@ -45,7 +53,12 @@ namespace L4HWT2_calculator
                         }
                     case "%":
                         {
-                            if (operand2 != 0) Calcul(operand1, operand2, arf);                            
+                            if (operand2 != 0)
+                            {
+                                int rez = operand1 % operand2;
+                                Calcul(operand1, operand2, arf, rez);
+                                break;
+                            }
                             else
                             {
                                 Console.WriteLine("На 0 делить запрещено!\n");
@@ -67,29 +80,8 @@ namespace L4HWT2_calculator
                 if (choise == "N") return false;
                 else return true;
             }
-            void Calcul(int operand1, int operand2, string arifmat)
+            void Calcul(int operand1, int operand2, string arifmat, int rez)
             {
-                int rez=0;
-                if (arifmat == "+")
-                {
-                    rez = operand1 + operand2;
-                }
-                else if (arifmat == "-")
-                {
-                    rez = operand1 - operand2;
-                }
-                else if (arifmat == "*")
-                {
-                    rez = operand1 * operand2;
-                }
-                else if (arifmat == "/")
-                {
-                    rez = operand1 / operand2;
-                }
-                else if (arifmat == "%")
-                {
-                    rez = operand1 % operand2;
-                }
                 Console.WriteLine("{0} {3} {1} = {2}", operand1, operand2, rez, arifmat);
             }
         }
