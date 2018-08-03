@@ -21,54 +21,40 @@ namespace L4HWT2_calculator
                 {
                     case "+":
                         {
-                            var rez = operand1 + operand2;
-                            Console.WriteLine("{0} + {1} = {2}", operand1, operand2, rez);
+                            Calcul(operand1,operand2,arf);
                             break;
                         }
                     case "-":
                         {
-                            var rez = operand1 - operand2;
-                            Console.WriteLine("{0} + {1} - {2}", operand1, operand2, rez);
+                            Calcul(operand1, operand2, arf);
                             break;
                         }
                     case "*":
-                        {
-                            var rez = operand1 * operand2;
-                            Console.WriteLine("{0} * {1} = {2}", operand1, operand2, rez);
+                        {                            
+                            Calcul(operand1, operand2, arf);
                             break;
                         }
                     case "/":
                         {
-                            if (operand2 != 0)
-                            {
-                                var rez = operand1 / operand2;
-                                Console.WriteLine("{0} / {1} = {2}", operand1, operand2, rez);
-                            }
+                            if (operand2 != 0) Calcul(operand1, operand2, arf);                            
                             else
                             {
-                                Console.WriteLine("На 0 делить запрещено!");
-                                Console.WriteLine();                                
+                                Console.WriteLine("На 0 делить запрещено!\n");                                                           
                             }
                             break;
                         }
                     case "%":
                         {
-                            if (operand2 != 0)
-                            {
-                                var rez = operand1 % operand2;
-                                Console.WriteLine("{0} % {1} = {2}", operand1, operand2, rez);
-                            }
+                            if (operand2 != 0) Calcul(operand1, operand2, arf);                            
                             else
                             {
-                                Console.WriteLine("На 0 делить запрещено!");
-                                Console.WriteLine();                                
+                                Console.WriteLine("На 0 делить запрещено!\n");
                             }
                             break;
                         }
                     default:
                         {
-                            Console.WriteLine("Ошибка ввода, выберите другой арифметический знак");
-                            Console.WriteLine();
+                            Console.WriteLine("Ошибка ввода, выберите другой арифметический знак\n");                            
                             break;
                         }
                 }
@@ -80,6 +66,31 @@ namespace L4HWT2_calculator
                 string choise = Console.ReadLine();
                 if (choise == "N") return false;
                 else return true;
+            }
+            void Calcul(int operand1, int operand2, string arifmat)
+            {
+                int rez=0;
+                if (arifmat == "+")
+                {
+                    rez = operand1 + operand2;
+                }
+                else if (arifmat == "-")
+                {
+                    rez = operand1 - operand2;
+                }
+                else if (arifmat == "*")
+                {
+                    rez = operand1 * operand2;
+                }
+                else if (arifmat == "/")
+                {
+                    rez = operand1 / operand2;
+                }
+                else if (arifmat == "%")
+                {
+                    rez = operand1 % operand2;
+                }
+                Console.WriteLine("{0} {3} {1} = {2}", operand1, operand2, rez, arifmat);
             }
         }
     }
