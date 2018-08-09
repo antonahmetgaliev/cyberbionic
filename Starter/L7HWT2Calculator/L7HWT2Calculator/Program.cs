@@ -4,11 +4,6 @@ namespace L7HWT2Calculator
 {
     class Program
     {
-        static int Cv()
-        {
-            string inp = Console.ReadLine();
-            return Convert.ToInt32(inp);
-        }
         static double Add(double a, double b)
         {
             return a + b;
@@ -25,35 +20,27 @@ namespace L7HWT2Calculator
         {
             return a / b;
         }
-        static double Choice (string s, double a, double b, ref bool check)
+        static double Choice (string s, double a, double b)
         {
             switch (s)
             {
                 case "+":
                     {
-                        check = true;
                         return Add(a, b);                        
                     }
                 case "-":
                     {
-                        check = true;
                         return Sub(a, b);                        
                     }
                 case "*":
                     {
-                        check = true;
                         return Mul(a, b);                        
                     }
                 case "/":
                     {
-                        if (b != 0)
-                        {
-                            check = true;
-                            return Div(a, b);
-                        }
-                        else return 0;
+                        return Div(a, b);
                     }
-                default: return 0;
+                default: throw new ArgumentException();
             }
         }
         static void Main()
@@ -64,17 +51,21 @@ namespace L7HWT2Calculator
                 do
                 {
                     Console.Write("Input A - ");
-                    int a = Cv();
+                    int a;
+                    int.TryParse(Console.ReadLine(),out a);
                     Console.Write("Input B - ");
-                    int b = Cv();
+                    int b;
+                    int.TryParse(Console.ReadLine(), out b);
                     Console.Write("Input the arithmetic sign - ");
                     string s = Console.ReadLine();
-                    double rez = Choice(s, a, b, ref check);
-                    if (check)
+                    if (b != 0 && (s=="+" || s == "-" || s == "*" || s == "/"))
                     {
-                        Console.WriteLine("{0} {1} {2} = {3}", a, s, b, rez);                        
+                        check = true;
+                        double rez = Choice(s, a, b);
+                        Console.WriteLine("{0} {1} {2} = {3}", a, s, b, rez);
                     }
-                    else Console.WriteLine("Error! Please take other value\n");
+                    else
+                    Console.WriteLine("Error! Please take other value\n");
                 }
                 while (!check);
             }
