@@ -31,7 +31,6 @@ namespace L7HWT4Number
             if (pm) Console.WriteLine("{0} is Simple", numb);
             else Console.WriteLine("{0} is not Simple", numb);
         }
-
         static void Div(int numb)
         {
             Console.WriteLine("Is the '{0}' divided by 2, 5, 3, 6, 9 without a remainder", numb);
