@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:L8HWT4Calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="MainWindow" Height="173.5" Width="421">
+    <Grid Margin="0,0,11,9">
+        <TextBox x:Name="TB1" HorizontalAlignment="Left" Height="28" Margin="10,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Operand 1" HorizontalAlignment="Left" Height="26" Margin="10,10,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="TB2" HorizontalAlignment="Left" Height="28" Margin="145,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Operand 2" HorizontalAlignment="Left" Height="26" Margin="145,10,0,0" VerticalAlignment="Top" Width="90"/>
+        <TextBox x:Name="TB3" HorizontalAlignment="Left" Height="28" Margin="280,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="114"/>
+        <Label Content="Result" HorizontalAlignment="Left" Height="26" Margin="280,10,0,0" VerticalAlignment="Top" Width="90"/>
+        <RadioButton x:Name="Mod" Content="Modulo" HorizontalAlignment="Left" Margin="10,86,0,0" VerticalAlignment="Top" IsChecked="True"/>
+        <RadioButton x:Name="Deg" Content="Degree" HorizontalAlignment="Left" Margin="10,106,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Con" Content="Concatenation" HorizontalAlignment="Left" Margin="145,89,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="Div" Content="Division" HorizontalAlignment="Left" Margin="145,109,0,0" VerticalAlignment="Top"/>
+        <Button Content="Do" HorizontalAlignment="Left" Margin="280,91,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+
     </Grid>
 </Window>
