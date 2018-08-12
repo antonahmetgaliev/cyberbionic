@@ -4,7 +4,7 @@ namespace L8HWT2Credit
 {
     class Program
     {
-        static void credit(int pay)
+        static void Credit(int pay)
         {
             int debt = 700;
             Console.WriteLine("The client paid {0} $ of debt",pay);
@@ -18,7 +18,7 @@ namespace L8HWT2Credit
             Console.Write("Input amount of payment - ");
             int payment;
             int.TryParse(Console.ReadLine(),out payment);
-            credit(payment);
+            Credit(payment);
             Console.ReadKey();
         }
     }
