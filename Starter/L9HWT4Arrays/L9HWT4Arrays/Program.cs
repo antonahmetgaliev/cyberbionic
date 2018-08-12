@@ -1,4 +1,4 @@
-﻿namespace L9HWT3Arrays
+﻿namespace L9HWT4Arrays
 {
     class Program
     {

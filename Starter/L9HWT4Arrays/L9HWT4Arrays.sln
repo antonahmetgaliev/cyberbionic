@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2047
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L9HWT4Arrays", "L9HWT4Arrays\L9HWT4Arrays.csproj", "{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E0FD20A0-BAC6-47E4-8C64-24B9257BE68B}
+	EndGlobalSection
+EndGlobal

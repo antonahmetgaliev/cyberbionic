@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{39FE7FD9-375C-4ACB-AE38-769322DBA89C}</ProjectGuid>
+    <ProjectGuid>{9AF1A95A-E45B-466F-9C28-406ABEABFDFC}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L9HWT3Arrays</RootNamespace>
-    <AssemblyName>L9HWT3Arrays</AssemblyName>
+    <RootNamespace>L9HWT4Arrays</RootNamespace>
+    <AssemblyName>L9HWT4Arrays</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
