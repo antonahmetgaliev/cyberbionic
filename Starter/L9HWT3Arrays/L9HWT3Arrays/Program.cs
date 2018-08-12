@@ -8,11 +8,9 @@ namespace L9HWT3Arrays
         static int [] MyReverse(int[] array)
         {
             int [] reversArray = new int[10];
-            int j = array.Length-1;
-            for (int i = 0; i < array.Length; i++)
+            for (int i = 0, j = array.Length - 1; i < array.Length; i++, j--)
             {
                 reversArray[i] = array[j];
-                --j;
             }
 
             return reversArray;
@@ -21,12 +19,10 @@ namespace L9HWT3Arrays
         static int[] SubArray(int[] array, int index, int count)
         {
             int [] subArray = new int[count];
-            int j = 0;
-            for (int i = index; i < count+index; i++)
+            for (int i = index, j = 0; i < count+index; i++, j++)
             {
                 if (i >= array.Length) subArray[j] = 1;
                 else subArray[j] = array[i];
-                ++j;
             }
             return subArray;
         }
