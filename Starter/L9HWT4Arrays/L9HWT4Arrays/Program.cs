@@ -4,9 +4,9 @@ namespace L9HWT4Arrays
 {
     class Program
     {
-        static int [] NewElement(int[] array, int dim, int index, int element)
+        static int [] NewElement(int[] array, int index, int element)
         {
-            int [] newArray = new int[dim+1];
+            int [] newArray = new int[array.Length+1];
             for (int i = 0; i < index; i++)
             {
                 newArray[i] = array[i];
@@ -43,7 +43,7 @@ namespace L9HWT4Arrays
             {
                 array[i] = i;
             }
-            int[] newArray = NewElement(array, dim, index, element);
+            int[] newArray = NewElement(array, index, element);
             Console.WriteLine("Old array : ");
             Show(array);
             Console.WriteLine("\nNew array : ");
