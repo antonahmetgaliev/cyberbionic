@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 
 namespace L1HWT4Figure
 {
@@ -27,16 +28,17 @@ namespace L1HWT4Figure
             }
         }
 
-        public double LengthSide(int A, int B)
+        public double LengthSide(int A1, int B1, int A2, int B2)
         {
-            return Math.Sqrt(Math.Pow(A - B, 2) + Math.Pow(A - B, 2));
+            return Math.Sqrt(Math.Pow(A2 - A1, 2) + Math.Pow(B2 - B1, 2));
         }
 
         public double PerimeterCalculator()
         {
-            for (int i = 0; i < _number; i++)
+            for (int i = 0, j = 1; i < _number; i++ , j++)
             {
-                Perimetr += LengthSide(points[i].X, points[i].Y);
+                if (j == 4) j = 0;
+                Perimetr += LengthSide(points[j].X, points[i].X, points[j].Y,points[i].Y);
             }
 
             return Perimetr;
