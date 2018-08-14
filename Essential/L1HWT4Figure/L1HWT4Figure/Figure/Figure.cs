@@ -14,6 +14,7 @@ namespace L1HWT4Figure
             Name = name;
             Console.Write("Input the number of points - ");
             _number = int.Parse(Console.ReadLine());
+            points = new Point[_number];
             for (int i = 0; i < _number; i++)
             {
                 Console.Write("Input letter of point - ");
