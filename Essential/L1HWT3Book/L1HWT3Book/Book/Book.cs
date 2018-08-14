@@ -18,14 +18,7 @@
             InitBook();
             this._title.Content = title;
         }
-
-        public void Show()
-        {
-            this._title.Show();
-            this._author.Show();
-            this._content.Show();
-        }
-
+        
         public string Author
         {
             set => this._author.Name = value;
@@ -34,6 +27,13 @@
         public string Content
         {
             set => this._content.Text = value;
+        }
+
+        public void Show()
+        {
+            this._title.Show();
+            this._author.Show();
+            this._content.Show();
         }
     }
 }

@@ -4,22 +4,12 @@ namespace L1HWT3Book
 {
     class Content
     {
-        private string text = null;
-
-        public string Text
-        {
-            private get
-            {
-                if (text != "") return text;
-                else return "Missing text";
-            }
-            set { text = value; }
-        }
+        public string Text { get; set; }
 
         public void Show()
         {
             Console.ForegroundColor = ConsoleColor.Red;
-            Console.WriteLine(text);
+            Console.WriteLine(Text);
             Console.ForegroundColor = ConsoleColor.Gray;
         }
     }
