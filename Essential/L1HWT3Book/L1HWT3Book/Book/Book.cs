@@ -2,38 +2,38 @@
 {
     class Book
     {
-        private Title _title = null;
-        private Author _author = null;
-        private Content _content = null;
+        private Title _title;
+        private Author _author;
+        private Content _content;
 
         void InitBook()
         {
-            this._title = new Title();
-            this._author = new Author();
-            this._content = new Content();
+            _title = new Title();
+            _author = new Author();
+            _content = new Content();
         }
 
         public Book(string title)
         {
             InitBook();
-            this._title.Content = title;
+            _title.Content = title;
         }
         
         public string Author
         {
-            set => this._author.Name = value;
+            set => _author.Name = value;
         }
 
         public string Content
         {
-            set => this._content.Text = value;
+            set => _content.Text = value;
         }
 
         public void Show()
         {
-            this._title.Show();
-            this._author.Show();
-            this._content.Show();
+            _title.Show();
+            _author.Show();
+            _content.Show();
         }
     }
 }
