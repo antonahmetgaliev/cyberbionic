@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // Общие сведения об этой сборке предоставляются следующим набором
 // набора атрибутов. Измените значения этих атрибутов, чтобы изменить сведения,
 // связанные со сборкой.
-[assembly: AssemblyTitle("L1HWE1_Address")]
+[assembly: AssemblyTitle("L1HWE1Address")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("L1HWE1_Address")]
+[assembly: AssemblyProduct("L1HWE1Address")]
 [assembly: AssemblyCopyright("Copyright ©  2018")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // Следующий GUID служит для идентификации библиотеки типов, если этот проект будет видимым для COM
-[assembly: Guid("b28a3d0c-a19c-48bd-8589-4d9fe4c4292b")]
+[assembly: Guid("57645faa-3bbb-4159-96f4-0681c0fc5d42")]
 
 // Сведения о версии сборки состоят из следующих четырех значений:
 //

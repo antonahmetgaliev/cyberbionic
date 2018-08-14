@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace L1HWE1_Address
+namespace L1HWE1Address
 {
     class Address
     {

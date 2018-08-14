@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B28A3D0C-A19C-48BD-8589-4D9FE4C4292B}</ProjectGuid>
+    <ProjectGuid>{57645FAA-3BBB-4159-96F4-0681C0FC5D42}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L1HWE1_Address</RootNamespace>
-    <AssemblyName>L1HWE1_Address</AssemblyName>
+    <RootNamespace>L1HWE1Address</RootNamespace>
+    <AssemblyName>L1HWE1Address</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
