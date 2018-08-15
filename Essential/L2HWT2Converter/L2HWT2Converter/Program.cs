@@ -4,9 +4,9 @@ namespace L2HWT2Converter
 {
     class Converter
     {
-        private double _usd;
-        private double _eur;
-        private double _rub;
+        private readonly double _usd;
+        private readonly double _eur;
+        private readonly double _rub;
 
         public Converter(double usd, double eur, double rub)
         {
@@ -17,36 +17,23 @@ namespace L2HWT2Converter
 
         public double ConvertToCurr(double uah, string curr)
         {
-            if (curr == "usd") return uah / _usd;
-            if (curr == "eur") return uah / _eur;
+            if (curr == "USD") return uah / _usd;
+            if (curr == "EUR") return uah / _eur;
             return uah / _rub;
         }
 
         public double ConvertToUah(double currDoub, string currStr)
         {
-            if (currStr == "usd") return currDoub * _usd;
-            if (currStr == "eur") return currDoub * _eur;
+            if (currStr == "USD") return currDoub * _usd;
+            if (currStr == "EUR") return currDoub * _eur;
             return currDoub * _rub;
         }
     }
     class Program
     {
-        static double SwitcherUah(string curr, Converter convert)
-        {
-            Console.Write("Input UAH - ");
-            var uah = double.Parse(Console.ReadLine());
-            return convert.ConvertToCurr(uah, curr);
-        }
-        static double SwitcherCurr(string currStr, Converter convert)
-        {
-            Console.Write("Input {0} - ", currStr);
-            var currDoub = double.Parse(Console.ReadLine());
-            return convert.ConvertToUah(currDoub, currStr);
-        }
-
         static bool Try()
         {
-            Console.WriteLine("Do u want to try again? (Y/N)");
+            Console.Write("Do u want to try again? (Y/N)");
             var check = Console.ReadKey();
             Console.Clear();
             return check.Key == ConsoleKey.Y;
@@ -88,7 +75,9 @@ namespace L2HWT2Converter
                             case "USD":
                             case "EUR":
                             case "RUB":
-                                Console.WriteLine(SwitcherUah(curr, convert));
+                                Console.Write("Input UAH - ");
+                                var uah = double.Parse(Console.ReadLine());
+                                Console.WriteLine("{0} UAH = {1} {2}",uah,convert.ConvertToCurr(uah, curr),curr);
                                 checkCurr = true;
                                 break;
                             default:
@@ -109,7 +98,9 @@ namespace L2HWT2Converter
                             case "USD":
                             case "EUR":
                             case "RUB":
-                                Console.WriteLine(SwitcherCurr(curr, convert));
+                                Console.Write("Input {0} - ", curr);
+                                var currDoub = double.Parse(Console.ReadLine());
+                                Console.WriteLine("{0} {1} = {2} UAH",currDoub,curr,convert.ConvertToUah(currDoub, curr));
                                 checkCurr = true;
                                 break;
                             default:
