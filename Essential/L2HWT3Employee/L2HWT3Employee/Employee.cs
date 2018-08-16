@@ -4,8 +4,8 @@ namespace L2HWT3Employee
 {
     class Employee
     {
-        private string _name;
-        private string _surname;
+        private readonly string _name;
+        private readonly string _surname;
         private string _position;
         private double _experience;
         private const double tax = 0.18;
