@@ -9,7 +9,8 @@ namespace L1HWT4Figure
             var check = int.TryParse(str, out _);
             return check;
         }
-        static bool Try()
+
+        private static bool Try()
         {
             Console.Write("Do u want to try again? (Y/N)");
             var check = Console.ReadKey();
