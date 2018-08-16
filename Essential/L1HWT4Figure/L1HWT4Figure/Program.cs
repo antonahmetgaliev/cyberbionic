@@ -9,14 +9,15 @@ namespace L1HWT4Figure
             var check = int.TryParse(str, out _);
             return check;
         }
-        private static bool Try(ConsoleKeyInfo _try)
+        static bool Try()
         {
+            Console.Write("Do u want to try again? (Y/N)");
+            var check = Console.ReadKey();
             Console.Clear();
-            return _try.Key == ConsoleKey.Y;
+            return check.Key == ConsoleKey.Y;
         }
         private static void Main()
         {
-            ConsoleKeyInfo _try;
             do
             {
                 var figure = new Figure();
@@ -61,9 +62,7 @@ namespace L1HWT4Figure
                     figure.InputPoint(letter, x, y, i);
                 }
                 Console.WriteLine("Perimetr of ur figere {0} = {1} sm", figure.Name, figure.PerimeterCalculator());
-                Console.Write("Do u want to try again? (Y/N)");
-                _try = Console.ReadKey();
-            } while (Try(_try));
+            } while (Try());
         }
     }
 }
