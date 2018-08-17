@@ -67,11 +67,12 @@ namespace L2HWT3Employee
         }
         static void Main()
         {
-            string acces;
+            var jobs = 5;
             var menu = new Menu();
             bool levelCheck;
             do
             {
+                string acces;
                 do
                 {
                     levelCheck = false;
@@ -88,11 +89,9 @@ namespace L2HWT3Employee
                         {
                             Console.Write("Access error!Do u want to change acces level? (Y/N)");
                             var check = Console.ReadKey();
-                            if (check.Key == ConsoleKey.Y)
-                            {
-                                accesCheck = false;
-                                levelCheck = true;
-                            }
+                            if (check.Key != ConsoleKey.Y) continue;
+                            accesCheck = false;
+                            levelCheck = true;
                         }
                         else
                         {
@@ -115,7 +114,7 @@ namespace L2HWT3Employee
                             {
                                 "What do you want to do?", "Change all salary",
                                 "Change salary to the director", "Change salary to the accountant",
-                                "Change salary to the employee", "Show all workers",
+                                "Change salary to the employee", "Show all workers", "Add new worker",
                                 "Change acces level"
                             };
                             doit = menu.CreateMenuInt(body);
@@ -168,7 +167,7 @@ namespace L2HWT3Employee
                                     {
                                         Console.Clear();
                                         var k = 0;
-                                        for (int i = 0; i < 5; i++)
+                                        for (var i = 0; i < jobs; i++)
                                         {
                                             if (k < 21)
                                             {
@@ -193,6 +192,36 @@ namespace L2HWT3Employee
 
                                     break;
                                 case 6:
+                                    check = true;
+                                    do
+                                    {
+                                        Console.Clear();
+                                        Console.Write("Input Name of new worker - ");
+                                        var name = Console.ReadLine();
+                                        Console.Write("Input Surname of new worker - ");
+                                        var surname = Console.ReadLine();
+                                        Console.Write("Input Position of new worker - ");
+                                        var position = Console.ReadLine();
+                                        string str;
+                                        do
+                                        {
+                                            Console.Write("Input experience of new worker - ");
+                                            str = Console.ReadLine();
+                                            if (!CheckDoub(str)) Console.WriteLine("Enter error!");
+                                        } while (!CheckDoub(str));
+                                        var experience = double.Parse(str);
+                                        if (employee.NewWorker(name, surname, position, experience))
+                                        {
+                                            Console.WriteLine("Worker successfully added!");
+                                            jobs++;
+                                        }
+                                        else Console.WriteLine("All jobs are occupied!");
+                                        Console.Write("\nDo u want return to menu? (Y/N)");
+                                        var _exit = Console.ReadKey();
+                                        if (_exit.Key == ConsoleKey.Y) check = false;
+                                    } while (check);
+                                    break;
+                                case 7:
                                     exit = false;
                                     break;
                                 case 0:
@@ -231,7 +260,7 @@ namespace L2HWT3Employee
                                     {
                                         Console.Clear();
                                         var k = 0;
-                                        for (int i = 1; i < 5; i++)
+                                        for (var i = 0; i < jobs; i++)
                                         {
                                             if (k < 21)
                                             {
@@ -268,7 +297,7 @@ namespace L2HWT3Employee
                     case "employee":
                         Console.Clear();
                         var clear = 0;
-                        for (int i = 2; i < 5; i++)
+                        for (var i = 0; i < jobs; i++)
                         {
                             if (clear < 21)
                             {

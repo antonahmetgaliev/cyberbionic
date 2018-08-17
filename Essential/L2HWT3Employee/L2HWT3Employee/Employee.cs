@@ -51,10 +51,15 @@
             empPer=perc;
         }
 
-        public void NewWorker(string name, string surname, string position, double experience)
+        public bool NewWorker(string name, string surname, string position, double experience)
         {
-            workers[counter]= new Workers(name, surname, position, experience, Salary(position, experience));
-            counter++;
+            if (counter != 10)
+            {
+                workers[counter] = new Workers(name, surname, position, experience, Salary(position, experience));
+                counter++;
+                return true;
+            }
+            return false;
         }
 
         private double Salary(string position, double experience)
