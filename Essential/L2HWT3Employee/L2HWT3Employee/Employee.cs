@@ -63,7 +63,7 @@
             {
                 case "accountant":
                     return SalaryCalcul(salary * accPer, experience);
-                case "employe":
+                case "employee":
                     return SalaryCalcul(salary * empPer, experience);
                 default:
                     return SalaryCalcul(salary * dirPer, experience);
