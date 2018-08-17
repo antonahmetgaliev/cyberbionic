@@ -185,6 +185,7 @@ namespace L2HWT3Employee
                                                 k += 7;
                                             }
                                         }
+
                                         Console.Write("\nDo u want return to menu? (Y/N)");
                                         var _exit = Console.ReadKey();
                                         if (_exit.Key == ConsoleKey.Y) check = false;
@@ -202,15 +203,91 @@ namespace L2HWT3Employee
 
                         break;
                     case "accountant":
-                        string[] body2 =
+                        exit = true;
+                        do
                         {
-                            "What do you want to do?", "Change salary to the employee",
-                            "Show accountant and employe salary", "Change acces level"
-                        };
-                        doit = menu.CreateMenuInt(body2);
+                            string[] body =
+                            {
+                                "What do you want to do?", "Change salary to the employee",
+                                "Show accountant and employe salary", "Change acces level"
+                            };
+                            doit = menu.CreateMenuInt(body);
+                            switch (doit)
+                            {
+                                case 1:
+                                    bool dirCheck;
+                                    do
+                                    {
+                                        Console.Clear();
+                                        Console.WriteLine("Now the percentage of the employee is {0}%",
+                                            employee.EmpPer());
+                                        dirCheck = Director(employee, doit);
+                                    } while (!dirCheck);
+
+                                    break;
+                                case 2:
+                                    var check = true;
+                                    do
+                                    {
+                                        Console.Clear();
+                                        var k = 0;
+                                        for (int i = 1; i < 5; i++)
+                                        {
+                                            if (k < 21)
+                                            {
+                                                ShowSalary(employee, i);
+                                                k += 7;
+                                            }
+                                            else
+                                            {
+                                                Console.WriteLine("\nPress any key to continue");
+                                                Console.ReadKey();
+                                                Console.Clear();
+                                                k = 0;
+                                                ShowSalary(employee, i);
+                                                k += 7;
+                                            }
+                                        }
+
+                                        Console.Write("\nDo u want return to menu? (Y/N)");
+                                        var _exit = Console.ReadKey();
+                                        if (_exit.Key == ConsoleKey.Y) check = false;
+                                    } while (check);
+
+                                    break;
+                                case 3:
+                                    exit = false;
+                                    break;
+                                case 0:
+                                    Environment.Exit(0);
+                                    break;
+                            }
+                        } while (exit);
+
                         break;
-                    case "employe": break;
-                }
+                    case "employee":
+                        Console.Clear();
+                        var clear = 0;
+                        for (int i = 2; i < 5; i++)
+                        {
+                            if (clear < 21)
+                            {
+                                ShowSalary(employee, i);
+                                clear += 7;
+                            }
+                            else
+                            {
+                                Console.WriteLine("\nPress any key to continue");
+                                Console.ReadKey();
+                                Console.Clear();
+                                clear = 0;
+                                ShowSalary(employee, i);
+                                clear += 7;
+                            }
+                        }
+                        Console.ReadKey();
+                        break;
+            }
             } while (!levelCheck);
         }
     }
