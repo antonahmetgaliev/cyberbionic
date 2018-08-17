@@ -6,7 +6,7 @@ namespace L2HWT3Employee
     {
         private string Color(string str)
         {
-            Console.BackgroundColor = ConsoleColor.White;
+            Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("> {0}", str);
             Console.BackgroundColor = ConsoleColor.Black;
@@ -26,12 +26,13 @@ namespace L2HWT3Employee
             do
             {
                 Console.Clear();
-                Console.WriteLine(body[0]);
+                if (body[0]!="") Console.WriteLine(body[0]);
                 for (int j = 1; j < body.Length; j++)
                 {
                     if (j==i) result = Color(body[j]);
                     else Show(body[j]);
                 }
+                Console.WriteLine("\nPress Esc for exit");
                 choise = Console.ReadKey();
                 if (choise.Key == ConsoleKey.DownArrow)
                 {
@@ -45,6 +46,8 @@ namespace L2HWT3Employee
                         i = quan;
                     else --i;
                 }
+                if (choise.Key == ConsoleKey.Escape)
+                    return "exit";
             } while (choise.Key != ConsoleKey.Enter);
             return result;
         }
@@ -56,12 +59,13 @@ namespace L2HWT3Employee
             do
             {
                 Console.Clear();
-                Console.WriteLine(body[0]);
+                if (body[0] != "") Console.WriteLine(body[0]);
                 for (int j = 1; j < body.Length; j++)
                 {
                     if (j == i) Color(body[j]);
                     else Show(body[j]);
                 }
+                Console.WriteLine("\nPress Esc for exit");
                 choise = Console.ReadKey();
                 if (choise.Key == ConsoleKey.DownArrow)
                 {
@@ -75,6 +79,8 @@ namespace L2HWT3Employee
                         i = quan;
                     else --i;
                 }
+                if (choise.Key == ConsoleKey.Escape)
+                    return 0;
             } while (choise.Key != ConsoleKey.Enter);
             return i;
         }

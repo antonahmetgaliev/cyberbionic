@@ -1,33 +1,72 @@
-﻿using System;
-
-namespace L2HWT3Employee
+﻿namespace L2HWT3Employee
 {
     class Employee
     {
-        private readonly string _name;
-        private readonly string _surname;
-        private string _position;
-        private double _experience;
+        private Workers[] workers;
         private const double tax = 0.18;
-        private const double salary = 1000;
+        private double salary = 1000;
+        private double dirPer = 2.5;
+        private double accPer = 1.5;
+        private double empPer = 0.75;
+        private int counter = 0;
 
-        public Employee(string name, string surname)
+        public Employee()
         {
-            _name = name;
-            _surname = surname;
+            workers = new Workers[10];
         }
 
-        public double Salary(string position, double experience)
+        public double Salary()
         {
-            _experience = experience;
-            switch (_position = position)
+            return salary;
+        }
+        public void Salary(double salary)
+        {
+            this.salary = salary;
+        }
+
+        public double DirPer()
+        {
+            return dirPer;
+        }
+        public void DirPer(double perc)
+        {
+            dirPer=perc;
+        }
+
+        public double AccPer()
+        {
+            return accPer;
+        }
+        public void AccPer(double perc)
+        {
+            accPer=perc;
+        }
+
+        public double EmpPer()
+        {
+            return empPer;
+        }
+        public void EmpPer(double perc)
+        {
+            empPer=perc;
+        }
+
+        public void NewWorker(string name, string surname, string position, double experience)
+        {
+            workers[counter]= new Workers(name, surname, position, experience, Salary(position, experience));
+            counter++;
+        }
+
+        private double Salary(string position, double experience)
+        {
+            switch (position)
             {
                 case "accountant":
-                    return SalaryCalcul(salary * 1.5, _experience);
-                case "security":
-                    return SalaryCalcul(salary * 0.75, _experience);
+                    return SalaryCalcul(salary * accPer, experience);
+                case "employe":
+                    return SalaryCalcul(salary * empPer, experience);
                 default:
-                    return SalaryCalcul(salary * 2.5, _experience);
+                    return SalaryCalcul(salary * dirPer, experience);
             }
         }
 
@@ -50,9 +89,36 @@ namespace L2HWT3Employee
              return salary + salary * 0.1;
         }
 
-        public void Show(double salary)
+        public double ShowSalary(int counter)
         {
-            Console.WriteLine("\nName : {0} \nSurname : {1} \nPosition : {2} \nExperience : {3} \nSalary : {4} USD \nTax charge : {5} USD", _name, _surname, _position, _experience, salary, salary*tax);
+            var salary= workers[counter].Salary();
+            return salary - salary * tax;
+        }
+
+        public double ShowTax(int counter)
+        {
+            var salary = workers[counter].Salary();
+            return salary * tax;
+        }
+
+        public string ShowName(int counter)
+        {
+            return workers[counter].Name();
+        }
+
+        public string ShowSurname(int counter)
+        {
+            return workers[counter].Surname();
+        }
+
+        public string ShowPosition(int counter)
+        {
+            return workers[counter].Position();
+        }
+
+        public double ShowExperience(int counter)
+        {
+            return workers[counter].Experience();
         }
     }
 }
