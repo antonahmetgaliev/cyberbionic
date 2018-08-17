@@ -58,14 +58,13 @@ namespace L2HWT3Employee
             //    }
             //} while (!accesCheck);
             string acces;
-            var menuStr = new MenuStr();
-            var menuInt = new MenuInt();
+            var menu = new Menu();
             bool levelCheck;
             do
             {
                 levelCheck = false;
                 string[] body = {"Select your access level", "director", "accountant", "employee"};
-                acces = menuStr.CreateMenu(body);
+                acces = menu.CreateMenuStr(body);
                 bool accesCheck;
                 do
                 {
@@ -99,7 +98,7 @@ namespace L2HWT3Employee
                         "Change salary to the director", "Change salary to the accountant",
                         "Change salary to the employee", "Show all salary"
                     };
-                    var doit = menuInt.CreateMenu(body);
+                    var doit = menu.CreateMenuInt(body);
                     switch (doit)
                     {
                         case 0:
@@ -114,9 +113,9 @@ namespace L2HWT3Employee
                         "What do you want to do?", "Change salary to the employee",
                         "Show accountant and employe salary"
                     };
-                    doit = menuInt.CreateMenu(body2);
+                    doit = menu.CreateMenuInt(body2);
                     break;
-                default: break;
+                case "employe": break;
             }
 
             Console.WriteLine("!!!!");
