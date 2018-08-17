@@ -64,7 +64,8 @@ namespace L2HWT3Employee
             do
             {
                 levelCheck = false;
-                acces = menuStr.CreateMenu("Select your access level", 2, "director", "accountant", "employee");
+                string[] body = {"Select your access level", "director", "accountant", "employee"};
+                acces = menuStr.CreateMenu(body);
                 bool accesCheck;
                 do
                 {
@@ -92,13 +93,28 @@ namespace L2HWT3Employee
             switch (acces)
             {
                 case "director":
-                    var doit = menuInt.CreateMenu("What do you want to do?", 3,
-                        "Change salary to the director" ,"Change salary to the accountant", 
-                        "Change salary to the employee", "Show all salary");
+                    string[] body =
+                    {
+                        "What do you want to do?",
+                        "Change salary to the director", "Change salary to the accountant",
+                        "Change salary to the employee", "Show all salary"
+                    };
+                    var doit = menuInt.CreateMenu(body);
+                    switch (doit)
+                    {
+                        case 0:
+                        case 1:
+                        case 2:
+                        case 3:break;
+                    }
                     break;
                 case "accountant":
-                    doit = menuInt.CreateMenu("What do you want to do?", 1,
-                        "Change salary to the employee", "Show accountant and employe salary");
+                    string[] body2 =
+                    {
+                        "What do you want to do?", "Change salary to the employee",
+                        "Show accountant and employe salary"
+                    };
+                    doit = menuInt.CreateMenu(body2);
                     break;
                 default: break;
             }
