@@ -1,9 +1,7 @@
-﻿namespace Calculator
-{
-    class Calcul
-    {
+﻿
 
-    }
+namespace Calculator
+{
     class Program
     {
         static void Main()
