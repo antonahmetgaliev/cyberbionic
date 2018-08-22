@@ -4,10 +4,17 @@ namespace L1HWT4Figure
 {
     class Program
     {
-        private static bool CheckInt(string str)
+        private static int CheckInt()
         {
-            var check = int.TryParse(str, out _);
-            return check;
+            int value;
+            var text= Console.ReadLine();
+            while (!int.TryParse(text, out value))
+            {
+                Console.Write("\nError Input! Please, enter other value - ");
+                text = Console.ReadLine();
+            }
+
+            return value;
         }
 
         private static bool Try()
@@ -21,46 +28,19 @@ namespace L1HWT4Figure
         {
             do
             {
-                var figure = new Figure();
+                var figure = new Figure.Figure();
                 Console.Write("Input name of figure - ");
                 var name = Console.ReadLine();
-                bool check;
-                var number = 0;
-                do
-                {
-                    Console.Write("Input the number of points - ");
-                    var str = Console.ReadLine();
-                    if (check = CheckInt(str))
-                    {
-                        number = int.Parse(str);
-                    }
-                    else Console.WriteLine("Input error!");
-                } while (!check);
-                figure.InitFigure(name, number);
+                figure.InitFigure(name);
+                Console.Write("Input number of points - ");
+                var number = CheckInt();
                 for (var i = 0; i < number; i++)
                 {
-                    Console.Write("Input letter of point - ");
-                    var letter = Console.ReadLine();
-                    int x = 0, y = 0;
-                    do
-                    {
-                        Console.Write("Input X - ");
-                        var str = Console.ReadLine();
-                        if (check = CheckInt(str))
-                        {
-                            x = int.Parse(str);
-                            Console.Write("Input Y - ");
-                            str = Console.ReadLine();
-                            if (check = CheckInt(str))
-                            {
-                                y = int.Parse(str);
-                            }
-                            else Console.WriteLine("Input error!");
-                        }
-                        else Console.WriteLine("Input error!");
-                    } while (!check);
-
-                    figure.InputPoint(letter, x, y, i);
+                    Console.Write("\nInput X - ");
+                    var x = CheckInt();
+                    Console.Write("Input Y - ");
+                    var y = CheckInt();
+                    figure.InputPoint(Convert.ToString(i), x, y);
                 }
                 Console.WriteLine("Perimetr of ur figere {0} = {1} sm", figure.Name, figure.PerimeterCalculator());
             } while (Try());

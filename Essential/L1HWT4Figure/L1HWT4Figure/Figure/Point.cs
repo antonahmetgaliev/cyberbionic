@@ -1,4 +1,4 @@
-﻿namespace L1HWT4Figure
+﻿namespace L1HWT4Figure.Figure
 {
     class Point
     {

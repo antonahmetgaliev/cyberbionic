@@ -18,14 +18,28 @@ namespace CalculatorTest
         [TestMethod]
         public void SumTest()
         {
-            int actual = _target.Sum(2, 5);
+            var actual = _target.Sum(2, 5);
             Assert.AreEqual(7, actual);
         }
 
         [TestMethod]
         public void DivTest()
         {
-            double actual = _target.Div(2, 5);
+            var actual = _target.Div(2, 5);
+            Assert.AreEqual(7, actual);
+        }
+
+        [TestMethod]
+        public void MulTest()
+        {
+            var actual = _target.Mul(2, 5);
+            Assert.AreEqual(7, actual);
+        }
+
+        [TestMethod]
+        public void SubTest()
+        {
+            var actual = _target.Sub(2, 5);
             Assert.AreEqual(7, actual);
         }
 
@@ -33,7 +47,7 @@ namespace CalculatorTest
         [ExpectedException(typeof(DivideByZeroException))]
         public void DivErrorTest()
         {
-            double actual = _target.Div(2, 0);
+            var actual = _target.Div(2, 0);
         }
     }
 }

@@ -1,39 +1,38 @@
 ﻿using System;
+using System.Collections.Generic;
 
-namespace L1HWT4Figure
+namespace L1HWT4Figure.Figure
 {
     class Figure
     {
-        private Point[] _points;
-        public string Name { get ;set; }
-        private int _number;
-        private double Perimetr;
+        private List<Point> _points;
+        public string Name { get; set; }
 
-        public void InitFigure(string name, int number)
+        public void InitFigure(string name)
         {
             Name = name;
-            _number = number;
-            _points = new Point[_number];
+            _points = new List<Point>();
         }
 
-        public void InputPoint(string letter, int x, int y, int i)
+        public void InputPoint(string letter, int x, int y)
         {
-            _points[i] = new Point(letter, x, y);
+            _points.Add(new Point(letter, x, y));
         }
 
-        public double LengthSide(int A1, int B1, int A2, int B2)
+        public double LengthSide(int a1, int b1, int a2, int b2)
         {
-            return Math.Sqrt(Math.Pow(A2 - A1, 2) + Math.Pow(B2 - B1, 2));
+            return Math.Sqrt(Math.Pow(a2 - a1, 2) + Math.Pow(b2 - b1, 2));
         }
 
         public double PerimeterCalculator()
         {
-            for (int i = 0, j = 1; i < _number; i++ , j++)
+            double perimetr = 0;
+            for (int i = 0, j = 1; i < _points.Count; i++, j++)
             {
-                if (j == _number) j = 0;
-                Perimetr += LengthSide(_points[j].X, _points[i].X, _points[j].Y,_points[i].Y);
+                if (j == _points.Count) j = 0;
+                perimetr += LengthSide(_points[j].X, _points[i].X, _points[j].Y, _points[i].Y);
             }
-            return Perimetr;
+            return perimetr;
         }
     }
 }
