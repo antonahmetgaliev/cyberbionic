@@ -11,13 +11,7 @@ namespace L2HWT3EmployeeV2Test
         [TestInitialize]
         public void Init()
         {
-            _target = new Employee("Anton", "Ahmetgaliev");
-        }
-
-        [TestMethod]
-        public void AddInfoTest()
-        {
-            _target.AddInfo("Owner",25);
+            _target = new Employee("Anton", "Ahmetgaliev", "Owner", 25);
         }
     }
 }

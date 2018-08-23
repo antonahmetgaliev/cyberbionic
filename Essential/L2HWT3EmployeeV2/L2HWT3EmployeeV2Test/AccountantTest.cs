@@ -1,4 +1,5 @@
-﻿using L2HWT3EmployeeV2;
+﻿using System.Collections.Generic;
+using L2HWT3EmployeeV2;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace L2HWT3EmployeeV2Test
@@ -11,12 +12,15 @@ namespace L2HWT3EmployeeV2Test
         [TestInitialize]
         public void Init()
         {
-            _target = new Accountant();
+            var salary = new Salary();
+            var employees = new List<Employee>();
+            _target = new Accountant(employees, salary);
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void ChangeWorkerConstTest()
         {
+            _target.ChangeWorkerConst(0.20);
         }
     }
     
