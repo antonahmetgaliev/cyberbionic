@@ -7,7 +7,7 @@ namespace L2HWT3EmployeeV2
     {
         private readonly string _name;
         private readonly string _surname;
-        private readonly string _position;
+        public readonly string Position;
         private readonly int _experience;
         private readonly double _salary;
 
@@ -15,19 +15,19 @@ namespace L2HWT3EmployeeV2
         {
             _name = name;
             _surname = surname;
-            _position = position;
+            Position = position;
             _experience = experience;
             var salary = new Salary();
             _salary = salary.GetSalary(position, experience);
         }
 
-        public List<string> ShowName()
+        public List<string> ShowInfo()
         {
             var employees = new List<string>
             {
                 _name,
                 _surname,
-                _position,
+                Position,
                 Convert.ToString(_experience),
                 (Convert.ToString(_salary))
             };

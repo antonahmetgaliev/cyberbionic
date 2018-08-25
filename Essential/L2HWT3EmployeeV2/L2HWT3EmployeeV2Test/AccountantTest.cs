@@ -22,6 +22,23 @@ namespace L2HWT3EmployeeV2Test
         {
             _target.ChangeWorkerConst(0.20);
         }
+
+        [TestMethod]
+        public void AddNewEmployeeTest()
+        {
+            _target.AddNewEmployee("Anton", "Ahmetgaliev", "Owner", 25);
+        }
+
+        [TestMethod]
+        public void CheckedAccesTest()
+        {
+            var check = _target.CheckedAcces("Owner");
+            Assert.AreEqual(check, check);
+            check = _target.CheckedAcces("Accountant");
+            Assert.AreEqual(check, check);
+            check = _target.CheckedAcces("Worker");
+            Assert.AreEqual(check, check);
+        }
     }
     
 }
