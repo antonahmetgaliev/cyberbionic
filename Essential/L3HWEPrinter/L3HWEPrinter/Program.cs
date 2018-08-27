@@ -1,15 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace L3HWEPrinter
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
+            var print = new PrinterRed();
+            print.Print("Hello! (Red)");
+            PrinterGreen printUp = print;
+            printUp.Print("Hello!! (Green)");
+            Printer printUpUp = printUp;
+            printUpUp.Print("Hello!!!");
+            PrinterGreen printDown = (PrinterGreen)printUpUp;
+            printDown.Print("Hello!! (Green)");
+            PrinterRed printDownDown = (PrinterRed) printDown;
+            printDownDown.Print("Hello! (Red)");
+            Console.ReadKey();
         }
     }
 }
