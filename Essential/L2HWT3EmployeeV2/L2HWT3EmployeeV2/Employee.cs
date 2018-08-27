@@ -5,20 +5,41 @@ namespace L2HWT3EmployeeV2
 {
     public class Employee
     {
+        private readonly Salary _calculSalary;
         private readonly string _name;
         private readonly string _surname;
-        public readonly string Position;
-        private readonly int _experience;
-        private readonly double _salary;
+        private string _position { get; set; }
+        private int _experience { get; set; }
+        private double _salary;
 
-        public  Employee(string name, string surname, string position, int experience)
+        public string Position()
+        {
+            return _position;
+        }
+
+        public double Experience()
+        {
+            return _experience;
+        }
+
+        public void ChangePosition(string position, double salary)
+        {
+            _position = position;
+            _salary = salary;
+        }
+
+        public void RefreshSalary(double salary)
+        {
+            _salary = salary;
+        }
+
+        public  Employee(string name, string surname, string position, int experience, int salary)
         {
             _name = name;
             _surname = surname;
-            Position = position;
+            _position = position;
             _experience = experience;
-            var salary = new Salary();
-            _salary = salary.GetSalary(position, experience);
+            _salary = salary;
         }
 
         public List<string> ShowInfo()
@@ -27,11 +48,16 @@ namespace L2HWT3EmployeeV2
             {
                 _name,
                 _surname,
-                Position,
+                _position,
                 Convert.ToString(_experience),
                 (Convert.ToString(_salary))
             };
             return employees;
+        }
+
+        public override string ToString()
+        {
+            return $"{nameof(_calculSalary)}: {_calculSalary}, {nameof(_name)}: {_name}, {nameof(_surname)}: {_surname}, {nameof(_salary)}: {_salary}, {nameof(_position)}: {_position}, {nameof(_experience)}: {_experience}";
         }
     }
 }

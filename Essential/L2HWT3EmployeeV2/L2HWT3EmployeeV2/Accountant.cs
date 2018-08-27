@@ -13,24 +13,35 @@ namespace L2HWT3EmployeeV2
             _salary = salary;
         }
 
+        public void CalculSalary()
+        { 
+            foreach (var t in _employees)
+            {
+                t.RefreshSalary(_salary.GetSalary(t.Position(), t.Experience()));
+            }
+        }
+
         public void ChangeOwnerConst(double perc)
         {
-            _salary.ChangeOwnerConst(perc); 
+            _salary.ChangeOwnerConst(perc);
+            CalculSalary();
         }
 
         public void ChangeAccountantConst(double perc)
         {
             _salary.ChangeAccConst(perc);
+            CalculSalary();
         }
 
         public void ChangeWorkerConst(double perc)
         {
             _salary.ChangeWorkerConst(perc);
+            CalculSalary();
         }
 
-        public void AddNewEmployee(string name, string surname, string position, int experience)
+        public void AddNewEmployee(Employee listEmployee)
         {
-            _employees.Add(new Employee(name, surname, position, experience));
+            _employees.Add(listEmployee);
         }
 
         public List<List<string>> CheckedAcces(string position)
@@ -60,7 +71,7 @@ namespace L2HWT3EmployeeV2
             var info = new List<List<string>>();
             for (int i = 0, j = 0; i < _employees.Count; i++)
             {
-                if (_employees[i].Position == "Owner") continue;
+                if (_employees[i].Position() == "Owner") continue;
                 info[j] = _employees[i].ShowInfo();
                 ++j;
             }
@@ -72,7 +83,7 @@ namespace L2HWT3EmployeeV2
             var info = new List<List<string>>();
             for (int i = 0, j = 0; i < _employees.Count; i++)
             {
-                if (_employees[i].Position != "Worker") continue;
+                if (_employees[i].Position() != "Worker") continue;
                 info[j] = _employees[i].ShowInfo();
                 ++j;
             }
