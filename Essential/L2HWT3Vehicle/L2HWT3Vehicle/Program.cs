@@ -48,43 +48,21 @@ namespace L2HWT3Vehicle
                 switch (switchOfMenu)
                 {
                     case 1:
-                        Console.Clear();
-                        Console.Write("\nEnter price - ");
-                        var price = CheckDouble();
-                        Console.Write("Enter max speed - ");
-                        var speed = CheckDouble();
-                        Console.Write("Enter year - ");
-                        var year = Console.ReadLine();
-                        Console.Write("Enter number of pasanger - ");
-                        var number = CheckInt();
+                        EnterParam(out var price, out var speed, out var year, out var number);
                         Console.Write("Enter height - ");
                         var height = CheckDouble();
                         vehicles.Add(new Plane(number, height, price, speed, year));
                         exit = Try();
                         break;
                     case 2:
-                        Console.Clear();
-                        Console.Write("\nEnter price - ");
-                        price = CheckDouble();
-                        Console.Write("Enter max speed - ");
-                        speed = CheckDouble();
-                        Console.Write("Enter year - ");
-                        year = Console.ReadLine();
-                        Console.Write("Enter number of pasanger - ");
-                        number = CheckInt();
+                        EnterParam(out price, out speed, out year, out number);
                         Console.Write("Enter port of recidence - ");
                         var port = Console.ReadLine();
                         vehicles.Add(new Ship(number, port, price, speed, year));
                         exit = Try();
                         break;
                     case 3:
-                        Console.Clear();
-                        Console.Write("\nEnter price - ");
-                        price = CheckDouble();
-                        Console.Write("Enter max speed - ");
-                        speed = CheckDouble();
-                        Console.Write("Enter year - ");
-                        year = Console.ReadLine();
+                        EnterCarParam(out price, out speed, out year);
                         Console.Write("Enter location - ");
                         var location = Console.ReadLine();
                         vehicles.Add(new Car(location, price, speed, year));
@@ -103,6 +81,24 @@ namespace L2HWT3Vehicle
                         break;
                 }
             } while (exit);
+        }
+
+        private static void EnterParam(out double price, out double speed, out string year, out int number)
+        {
+            EnterCarParam(out price, out speed, out year);
+            Console.Write("Enter number of pasanger - ");
+            number = CheckInt();
+        }
+
+        private static void EnterCarParam(out double price, out double speed, out string year)
+        {
+            Console.Clear();
+            Console.Write("\nEnter price - ");
+            price = CheckDouble();
+            Console.Write("Enter max speed - ");
+            speed = CheckDouble();
+            Console.Write("Enter year - ");
+            year = Console.ReadLine();
         }
 
         private static bool Try()
