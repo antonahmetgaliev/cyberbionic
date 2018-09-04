@@ -12,11 +12,14 @@
             return base.Create(name + ".doc");
         }
 
-        public override void Open(string name)
+        public override bool Open(string name)
         {
-            base.Open(name + ".doc");
+            return base.Open(name + ".doc");
         }
 
-        public override void Save() { }
+        public override void Save()
+        {
+            base.Save();
+        }
     }
 }

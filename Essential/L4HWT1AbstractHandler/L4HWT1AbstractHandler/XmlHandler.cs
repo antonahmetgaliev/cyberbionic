@@ -12,11 +12,14 @@
             return base.Create(name + ".xml");
         }
 
-        public override void Open(string name)
+        public override bool Open(string name)
         {
-            base.Open(name + ".xml");
+            return base.Open(name + ".xml");
         }
 
-        public override void Save() {}
+        public override void Save()
+        {
+            base.Save();
+        }
     }
 }

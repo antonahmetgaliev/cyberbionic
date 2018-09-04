@@ -9,10 +9,10 @@ namespace L4HWT1AbstractHandler
 
         public bool Try()
         {
-            if (_resultInt != 0)
-                if (_resultStr != "")
+            if (_resultInt != 0 || _resultStr != "exit")
+                
                 {
-                    Console.Write("\nDo u want return to menu? (Y/N)");
+                    Console.Write("\nReturn to the previous menu? (Y/N)");
                     var exit = Console.ReadKey();
                     Console.Clear();
                     return exit.Key != ConsoleKey.N;
@@ -62,8 +62,12 @@ namespace L4HWT1AbstractHandler
                         i = quan;
                     else --i;
                 }
+
                 if (choise.Key == ConsoleKey.Escape)
-                    return "exit";
+                {
+                    _resultInt = 0;
+                    return _resultStr="exit";
+                }
             } while (choise.Key != ConsoleKey.Enter);
             return _resultStr;
         }
@@ -95,8 +99,12 @@ namespace L4HWT1AbstractHandler
                         i = quan;
                     else --i;
                 }
+
                 if (choise.Key == ConsoleKey.Escape)
+                {
+                    _resultStr = "exit";
                     return _resultInt = 0;
+                }
             } while (choise.Key != ConsoleKey.Enter);
             return i;
         }

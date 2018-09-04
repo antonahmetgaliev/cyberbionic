@@ -12,11 +12,14 @@
             return base.Create(name+".txt");
         }
 
-        public override void Open(string name)
+        public override bool Open(string name)
         {
-            base.Open(name + ".txt");
+            return base.Open(name + ".txt");
         }
 
-        public override void Save() { }
+        public override void Save()
+        {
+            base.Save();
+        }
     }
 }
