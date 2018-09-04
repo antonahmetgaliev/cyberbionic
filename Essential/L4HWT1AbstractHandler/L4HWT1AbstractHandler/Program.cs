@@ -59,17 +59,13 @@ namespace L4HWT1AbstractHandler
                 switch (select)
                 {
                     case 1:
-                        Console.Clear();
-                        Console.Write("Enter name of file - ");
-                        nameOfFile = Console.ReadLine();
+                        nameOfFile = NameOfFile();
                         Console.WriteLine(file.Create(nameOfFile)
                             ? "New file created!"
                             : "File with this name already exists.");
                         break;
                     case 2:
-                        Console.Clear();
-                        Console.Write("Enter name of file - ");
-                        nameOfFile = Console.ReadLine();
+                        nameOfFile = NameOfFile();
                         Console.WriteLine(file.Open(nameOfFile)
                             ? "File successfully opened!"
                             : "A file with this name was not found!");
@@ -89,6 +85,14 @@ namespace L4HWT1AbstractHandler
                 }
                 Console.Clear();
             } while (menu.Try());
+        }
+
+        private static string NameOfFile()
+        {
+            Console.Clear();
+            Console.Write("Enter name of file - ");
+            var nameOfFile = Console.ReadLine();
+            return nameOfFile;
         }
     }
 }
