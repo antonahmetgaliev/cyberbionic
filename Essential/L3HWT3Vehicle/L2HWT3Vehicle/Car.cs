@@ -1,6 +1,6 @@
 ﻿namespace L2HWT3Vehicle
 {
-    internal class Car:Vehicle
+    internal class Car : Vehicle
     {
         private readonly string _location;
 
