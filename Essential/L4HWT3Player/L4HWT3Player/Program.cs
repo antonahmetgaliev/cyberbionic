@@ -1,46 +1,42 @@
-﻿namespace L4HWT3Player
+﻿using System;
+using L4HWT1AbstractHandler;
+
+namespace L4HWT3Player
 {
-    interface IPlayable
+    internal class Program
     {
-        void Play();
-        void Pause();
-        void Stop();
-    }
-
-    interface IRecodable
-    {
-        void Record();
-        void Pause();
-        void Stop();
-    }
-
-    class Player:IPlayable, IRecodable
-    {
-        public void Play()
+        private static void Main()
         {
-
-        }
-
-        public void Pause()
-        {
-
-        }
-
-        public void Stop()
-        {
-
-        }
-
-        public void Record()
-        {
-
-        }
-    }
-
-    class Program
-    {
-        static void Main()
-        {
+            IPlayable play = new Player();
+            IRecodable record = new Player();
+            var menu = new Menu();
+            string doMenu = null;
+            do
+            {
+                var body = new[]
+                {
+                    "", "Play", "Pause", "Stop", "Record"
+                };
+                var select = menu.CreateMenuStr(body, doMenu);
+                switch (select)
+                {
+                    case "Play":
+                        doMenu = play.Play();
+                        break;
+                    case "Pause":
+                        doMenu = play.Pause();
+                        break;
+                    case "Stop":
+                        doMenu = play.Stop();
+                        break;
+                    case "Record":
+                        doMenu = record.Record();
+                        break;
+                    case "exit":
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (true);
         }
     }
 }
