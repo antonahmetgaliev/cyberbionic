@@ -1,17 +1,26 @@
 ﻿using System;
 
-namespace L2HWT3Employee
+namespace L4HWT1AbstractHandler
 {
-    class Menu
+    internal class Menu
     {
+        private string _resultStr;
+        private int _resultInt;
+
         public bool Try()
         {
-            Console.Write("\nDo u want return to menu? (Y/N)");
-            Console.Clear();
-            var exit = Console.ReadKey();
-            return exit.Key != ConsoleKey.N;
+            if (_resultInt != 0)
+                if (_resultStr != "")
+                {
+                    Console.Write("\nDo u want return to menu? (Y/N)");
+                    var exit = Console.ReadKey();
+                    Console.Clear();
+                    return exit.Key != ConsoleKey.N;
+                }
+
+            return false;
         }
-        private string Color(string str)
+        private static string Color(string str)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
@@ -29,14 +38,14 @@ namespace L2HWT3Employee
             ConsoleKeyInfo choise;
             var i = 1;
             var quan = body.Length-1;
-            var result = "";
+            _resultStr = "";
             do
             {
                 Console.Clear();
                 if (body[0]!="") Console.WriteLine(body[0]);
                 for (int j = 1; j < body.Length; j++)
                 {
-                    if (j==i) result = Color(body[j]);
+                    if (j==i) _resultStr = Color(body[j]);
                     else Show(body[j]);
                 }
                 Console.WriteLine("\nPress Esc for exit");
@@ -56,7 +65,7 @@ namespace L2HWT3Employee
                 if (choise.Key == ConsoleKey.Escape)
                     return "exit";
             } while (choise.Key != ConsoleKey.Enter);
-            return result;
+            return _resultStr;
         }
         public int CreateMenuInt(string[] body)
         {
@@ -87,7 +96,7 @@ namespace L2HWT3Employee
                     else --i;
                 }
                 if (choise.Key == ConsoleKey.Escape)
-                    return 0;
+                    return _resultInt = 0;
             } while (choise.Key != ConsoleKey.Enter);
             return i;
         }
