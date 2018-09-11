@@ -35,7 +35,6 @@ namespace L5HWT2Array
             {
                 if (array[i] < 0) Console.Write("{0} ", array[i]);
             }
-
             Console.ReadKey();
         }
     }
