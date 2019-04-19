@@ -18,13 +18,13 @@ namespace L5HWT3MyMatrix
         }
         private static void Main()
         {
-            Console.Write("Input nomber of column - ");
+            Console.Write("Input number of column - ");
             var column = CheckInt();
-            Console.Write("Input nomber of row - ");
+            Console.Write("Input number of row - ");
             var row = CheckInt();
-            Console.Write("Input nomber of subMatrix column - ");
+            Console.Write("Input number of subMatrix column - ");
             var subColumn = CheckInt();
-            Console.Write("Input nomber of subMatrix row - ");
+            Console.Write("Input number of subMatrix row - ");
             var subRow = CheckInt();
             var matrix = new MyMatrix(column, row, subColumn, subRow);
             Console.WriteLine();

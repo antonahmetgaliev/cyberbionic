@@ -1,4 +1,5 @@
-﻿namespace L5HWT3MyMatrix
+﻿
+namespace L5HWT3MyMatrix
 {
     internal class MyMatrix
     {
@@ -17,7 +18,7 @@
         }
 
         public void Show()
-        {
+        {            
             for (var i = 0; i < _matrix.GetLength(0); i++)
             {
                 for (var j = 0; j < _matrix.GetLength(1); j++)
