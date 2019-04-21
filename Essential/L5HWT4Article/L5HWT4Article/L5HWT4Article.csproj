@@ -4,14 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6618429E-5AE0-42D1-9440-7E28D9F424F2}</ProjectGuid>
+    <ProjectGuid>{1EEB16BB-5AC1-4AEF-BF08-E52E426DD9ED}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L4HWT3Player</RootNamespace>
-    <AssemblyName>L4HWT3Player</AssemblyName>
+    <RootNamespace>L5HWT4Article</RootNamespace>
+    <AssemblyName>L5HWT4Article</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,12 +37,11 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IPlayable.cs" />
-    <Compile Include="IRecodable.cs" />
+    <Compile Include="Article.cs" />
     <Compile Include="Menu.cs" />
-    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Store.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
