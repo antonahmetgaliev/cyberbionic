@@ -2,15 +2,30 @@
 {
     internal class Article
     {
-        private string _productName;
-        private string _shopName;
-        private double _cost;
+        private readonly string _productName;
+        private readonly string _shopName;
+        private readonly int _cost;
 
-        public Article(string productName, string shopName, double cost)
+        public Article(string productName, string shopName, int cost)
         {
             _productName = productName;
             _shopName = shopName;
             _cost = cost;
+        }
+
+        public string ShowProductName()
+        {
+            return _productName;
+        }
+
+        public string ShowShopName()
+        {
+            return _shopName;
+        }
+
+        public int ShowCost()
+        {
+            return _cost;
         }
     }
 }
