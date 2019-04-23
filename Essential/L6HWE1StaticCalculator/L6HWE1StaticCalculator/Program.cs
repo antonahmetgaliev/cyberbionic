@@ -26,7 +26,14 @@ namespace L6HWE1StaticCalculator
             Console.WriteLine($"a + b = {Calculator.Sum(a, b)}");
             Console.WriteLine($"a - b = {Calculator.Sub(a, b)}");
             Console.WriteLine($"a * b = {Calculator.Mul(a, b)}");
-            Console.WriteLine(b != 0 ? $"a / b = {Calculator.Div(a, b)}" : "Division by zero is prohibited");
+            try
+            {
+                Console.WriteLine($"a / b = {Calculator.Div(a, b)}");
+            }
+            catch (DivideByZeroException)
+            {
+                Console.WriteLine("Division by zero is prohibited");
+            }
             Console.ReadKey();
         }
     }
