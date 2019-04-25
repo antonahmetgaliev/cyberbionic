@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace L4HWT1AbstractHandler
+namespace L5HWT4Article
 {
     internal class Menu
     {
@@ -9,16 +9,12 @@ namespace L4HWT1AbstractHandler
 
         public bool Try()
         {
-            if (_resultInt != 0 || _resultStr != "exit")
-                
-                {
-                    Console.Write("\nReturn to the previous menu? (Y/N)");
-                    var exit = Console.ReadKey();
-                    Console.Clear();
-                    return exit.Key != ConsoleKey.N;
-                }
+            if (_resultInt == 0 && _resultStr == "exit") return false;
+            Console.Write("\nReturn to the previous menu? (Y/N)");
+            var exit = Console.ReadKey();
+            Console.Clear();
+            return exit.Key != ConsoleKey.N;
 
-            return false;
         }
         private static string Color(string str)
         {
@@ -29,13 +25,13 @@ namespace L4HWT1AbstractHandler
             Console.ForegroundColor = ConsoleColor.Gray;
             return str;
         }
-        private void Show(string str)
+        private static void Show(string str)
         {
             Console.WriteLine("- {0}", str);
         }
         public string CreateMenuStr(string [] body)
         {
-            ConsoleKeyInfo choise;
+            ConsoleKeyInfo choose;
             var i = 1;
             var quan = body.Length-1;
             _resultStr = "";
@@ -43,69 +39,69 @@ namespace L4HWT1AbstractHandler
             {
                 Console.Clear();
                 if (body[0]!="") Console.WriteLine(body[0]);
-                for (int j = 1; j < body.Length; j++)
+                for (var j = 1; j < body.Length; j++)
                 {
                     if (j==i) _resultStr = Color(body[j]);
                     else Show(body[j]);
                 }
                 Console.WriteLine("\nPress Esc for exit");
-                choise = Console.ReadKey();
-                if (choise.Key == ConsoleKey.DownArrow)
+                choose = Console.ReadKey();
+                switch (choose.Key)
                 {
-                    if (i == quan)
+                    case ConsoleKey.DownArrow when i == quan:
                         i = 1;
-                    else ++i;
-                }
-                if (choise.Key == ConsoleKey.UpArrow)
-                {
-                    if (i == 1)
+                        break;
+                    case ConsoleKey.DownArrow:
+                        ++i;
+                        break;
+                    case ConsoleKey.UpArrow when i == 1:
                         i = quan;
-                    else --i;
+                        break;
+                    case ConsoleKey.UpArrow:
+                        --i;
+                        break;
+                    case ConsoleKey.Escape:
+                        _resultInt = 0;
+                        return _resultStr="exit";
                 }
-
-                if (choise.Key == ConsoleKey.Escape)
-                {
-                    _resultInt = 0;
-                    return _resultStr="exit";
-                }
-            } while (choise.Key != ConsoleKey.Enter);
+            } while (choose.Key != ConsoleKey.Enter);
             return _resultStr;
         }
         public int CreateMenuInt(string[] body)
         {
-            ConsoleKeyInfo choise;
+            ConsoleKeyInfo choose;
             var i = 1;
             var quan = body.Length - 1;
             do
             {
                 Console.Clear();
                 if (body[0] != "") Console.WriteLine(body[0]);
-                for (int j = 1; j < body.Length; j++)
+                for (var j = 1; j < body.Length; j++)
                 {
                     if (j == i) Color(body[j]);
                     else Show(body[j]);
                 }
                 Console.WriteLine("\nPress Esc for exit");
-                choise = Console.ReadKey();
-                if (choise.Key == ConsoleKey.DownArrow)
+                choose = Console.ReadKey();
+                switch (choose.Key)
                 {
-                    if (i == quan)
+                    case ConsoleKey.DownArrow when i == quan:
                         i = 1;
-                    else ++i;
-                }
-                if (choise.Key == ConsoleKey.UpArrow)
-                {
-                    if (i == 1)
+                        break;
+                    case ConsoleKey.DownArrow:
+                        ++i;
+                        break;
+                    case ConsoleKey.UpArrow when i == 1:
                         i = quan;
-                    else --i;
+                        break;
+                    case ConsoleKey.UpArrow:
+                        --i;
+                        break;
+                    case ConsoleKey.Escape:
+                        _resultStr = "exit";
+                        return _resultInt = 0;
                 }
-
-                if (choise.Key == ConsoleKey.Escape)
-                {
-                    _resultStr = "exit";
-                    return _resultInt = 0;
-                }
-            } while (choise.Key != ConsoleKey.Enter);
+            } while (choose.Key != ConsoleKey.Enter);
             return i;
         }
     }
