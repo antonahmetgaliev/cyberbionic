@@ -16,27 +16,25 @@ namespace L6HWT3Book
 
         public class Notes
         {
-            private readonly List<string> _notes;
+            private readonly string[]_notes;
 
             public Notes(int count)
             {
-                _notes = new List<string>(count);
-                for (var i = 0; i < count; i++)
-                {
-                    _notes.Add("");
-                }
+                _notes = new string[count];
             }
 
             public bool SetNotes(string comment, int page)
             {
                 if (_book.Count < page) return false;
-                _notes.Insert(page, comment);
+                _notes[page] = comment;
                 return true;
             }
 
             public bool DeleteNotes(int page)
             {
-                return _notes.Remove(_notes[page]);
+                if (_book.Count < page) return false;
+                _notes[page]="";
+                return true;
             }
 
             public string ShowNotes(int page)
