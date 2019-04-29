@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace L5HWT4Article
+namespace L6HWT3Book
 {
     internal static class Menu
     {
-        private string _resultStr;
-        private int _resultInt;
+        private static string _resultStr;
+        private static int _resultInt;
 
-        public bool Try()
+        public static bool Try()
         {
             if (_resultInt == 0 && _resultStr == "exit") return false;
             Console.Write("\nReturn to the previous menu? (Y/N)");
@@ -29,7 +29,7 @@ namespace L5HWT4Article
         {
             Console.WriteLine("- {0}", str);
         }
-        public string CreateMenuStr(string [] body)
+        public static string CreateMenuStr(string [] body)
         {
             ConsoleKeyInfo choose;
             var i = 1;
@@ -67,7 +67,7 @@ namespace L5HWT4Article
             } while (choose.Key != ConsoleKey.Enter);
             return _resultStr;
         }
-        public int CreateMenuInt(string[] body)
+        public static int CreateMenuInt(string[] body)
         {
             ConsoleKeyInfo choose;
             var i = 1;
