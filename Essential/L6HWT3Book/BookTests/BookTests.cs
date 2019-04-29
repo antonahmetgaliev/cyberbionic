@@ -23,6 +23,13 @@ namespace BookTests
         }
 
         [TestMethod]
+        public void ChangeNotesTest()
+        {
+            var actual = _target.ChangeNotes("changed note",1);
+            Assert.AreEqual(true, actual);
+        }
+
+        [TestMethod]
         public void DeleteNotesTest()
         {
             var actual = _target.DeleteNotes(1);

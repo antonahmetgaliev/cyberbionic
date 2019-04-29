@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace L6HWT3Book
 {
@@ -19,15 +18,9 @@ namespace L6HWT3Book
 
             public bool SetNotes(string comment, int page)
             {
-                if (_book.Count < page)
-                {
-                    _notes[page] = comment;
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                if (_book.Count >= page) return false;
+                _notes[page] = comment;
+                return true;
             }
 
             public bool DeleteNotes(int page)
@@ -44,6 +37,11 @@ namespace L6HWT3Book
         public bool DeleteNotes(int page)
         {
             return _notes.DeleteNotes(page);
+        }
+
+        public bool ChangeNotes(string newComment, int page)
+        {
+            return SetNotes(newComment, page);
         }
     }
 }
