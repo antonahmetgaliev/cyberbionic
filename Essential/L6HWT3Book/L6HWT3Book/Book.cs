@@ -26,14 +26,14 @@ namespace L6HWT3Book
             public bool SetNotes(string comment, int page)
             {
                 if (_book.Count < page) return false;
-                _notes[page] = comment;
+                _notes[page-1] = comment;
                 return true;
             }
 
             public bool DeleteNotes(int page)
             {
                 if (_book.Count < page) return false;
-                _notes[page]="";
+                _notes[page-1]="";
                 return true;
             }
 
@@ -58,9 +58,9 @@ namespace L6HWT3Book
             return SetNotes(newComment, page);
         }
 
-        public void Show()
+        public List<string> Show()
         {
-            var bookShow = _book.Select((t, i) => t + "Comment: " + _notes.ShowNotes(i)).ToList();
+            return _book.Select((t, i) => t + " Comment: " + _notes.ShowNotes(i)).ToList();
         }
     }
 }

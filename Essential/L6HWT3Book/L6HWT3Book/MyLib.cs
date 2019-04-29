@@ -2,10 +2,36 @@
 
 namespace L6HWT3Book
 {
-    internal static class Menu
+    internal static class MyLib
     {
         private static string _resultStr;
         private static int _resultInt;
+
+        public static int CheckInt()
+        {
+            int value;
+            var text = Console.ReadLine();
+            while (!int.TryParse(text, out value))
+            {
+                Console.Write("\nError Input! Please, enter other value - ");
+                text = Console.ReadLine();
+            }
+
+            return value;
+        }
+
+        public static double CheckDouble()
+        {
+            double value;
+            var text = Console.ReadLine();
+            while (!double.TryParse(text, out value))
+            {
+                Console.Write("\nError Input! Please, enter other value - ");
+                text = Console.ReadLine();
+            }
+
+            return value;
+        }
 
         public static bool Try()
         {
@@ -16,6 +42,13 @@ namespace L6HWT3Book
             return exit.Key != ConsoleKey.N;
 
         }
+
+        public static void Done()
+        {
+            Console.WriteLine("\nPress any button to return to the menu.");
+            Console.ReadKey();
+        }
+
         private static string Color(string str)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
@@ -62,11 +95,13 @@ namespace L6HWT3Book
                         break;
                     case ConsoleKey.Escape:
                         _resultInt = 0;
+                        Environment.Exit(0);
                         return _resultStr="exit";
                 }
             } while (choose.Key != ConsoleKey.Enter);
             return _resultStr;
         }
+
         public static int CreateMenuInt(string[] body)
         {
             ConsoleKeyInfo choose;
@@ -99,6 +134,7 @@ namespace L6HWT3Book
                         break;
                     case ConsoleKey.Escape:
                         _resultStr = "exit";
+                        Environment.Exit(0);
                         return _resultInt = 0;
                 }
             } while (choose.Key != ConsoleKey.Enter);
