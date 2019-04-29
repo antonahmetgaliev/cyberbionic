@@ -34,6 +34,27 @@ namespace L6HWT3Book
             return pageText;
         }
 
+        private static int PageReturn(string act)
+        {
+            Console.Clear();
+            Console.Write($"Which page do you want to {act} a comment? - ");
+            return MyLib.CheckInt();
+        }
+
+        private static string CommentReturn()
+        {
+            Console.Clear();
+            Console.Write("\nEnter your comment - ");
+            return Console.ReadLine();
+        }
+
+        private static string Show(Book book, string act)
+        {
+            if (act == "delete")
+                return book.DeleteNotes(PageReturn(act)) ? "\nDone!" : "\nError!";
+            return book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
+        }
+        
         private static void Main()
         {
             var book = new Book(Start());
@@ -53,28 +74,15 @@ namespace L6HWT3Book
                         MyLib.Done();
                         break;
                     case 2:
-                        Console.Clear();
-                        Console.Write("Which page do you want to add a comment? - ");
-                        var page = MyLib.CheckInt();
-                        Console.Write("\nEnter your comment - ");
-                        var comment = Console.ReadLine();
-                        book.SetNotes(comment, page);
+                        Console.WriteLine(Show(book, "add"));
                         MyLib.Done();
                         break;
                     case 3:
-                        Console.Clear();
-                        Console.Write("Which page do you want to change a comment? - ");
-                        page = MyLib.CheckInt();
-                        Console.Write("\nEnter your comment - ");
-                        comment = Console.ReadLine();
-                        book.ChangeNotes(comment, page);
+                        Console.WriteLine(Show(book, "change"));
                         MyLib.Done();
                         break;
                     case 4:
-                        Console.Clear();
-                        Console.Write("Which page do you want to delete a comment? - ");
-                        page = MyLib.CheckInt();
-                        book.DeleteNotes(page);
+                        Console.WriteLine(Show(book, "delete"));
                         MyLib.Done();
                         break;
                     case 5:

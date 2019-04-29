@@ -49,6 +49,12 @@ namespace L6HWT3Book
             Console.ReadKey();
         }
 
+        public static void Continue()
+        {
+            Console.WriteLine("\nPress any button to continue.");
+            Console.ReadKey();
+        }
+
         private static string Color(string str)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
