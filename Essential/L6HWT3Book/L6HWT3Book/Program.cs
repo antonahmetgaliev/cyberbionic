@@ -4,8 +4,8 @@
     {
         private static void Main()
         {
-            var book = new Book();
-            var notes = new Book.Notes();
+            //var book = new Book();
+            //var notes = new Book.Notes();
         }
     }
 }
