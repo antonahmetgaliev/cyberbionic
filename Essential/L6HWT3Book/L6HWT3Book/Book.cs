@@ -1,12 +1,12 @@
-﻿using System.Collections.Generic;
-using System.Runtime.InteropServices;
+﻿using System;
+using System.Collections.Generic;
 
 namespace L6HWT3Book
 {
     public class Book
     {
         private static List<string> _book;
-        private Notes _notes = new Notes(); 
+        private readonly Notes _notes = new Notes(); 
 
         public Book(List<string> book)
         {
@@ -15,13 +15,13 @@ namespace L6HWT3Book
 
         public class Notes
         {
-            private List<string> _notes = new List<string>();
+            private readonly List<string> _notes = new List<string>();
 
-            public bool SetNotes(string comment, int i)
+            public bool SetNotes(string comment, int page)
             {
-                if (_book.Count < i)
+                if (_book.Count < page)
                 {
-                    _notes[i] = comment;
+                    _notes[page] = comment;
                     return true;
                 }
                 else
@@ -29,11 +29,21 @@ namespace L6HWT3Book
                     return false;
                 }
             }
+
+            public bool DeleteNotes(int page)
+            {
+                return _notes.Remove(_notes[page]);
+            }
         }
 
-        public bool SetNotes(string comment, int i)
+        public bool SetNotes(string comment, int page)
         {
-            return _notes.SetNotes(comment,i);
+            return _notes.SetNotes(comment,page);
+        }
+
+        public bool DeleteNotes(int page)
+        {
+            return _notes.DeleteNotes(page);
         }
     }
 }

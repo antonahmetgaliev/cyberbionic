@@ -21,5 +21,12 @@ namespace BookTests
             var actual = _target.SetNotes("1 comment",1);
             Assert.AreEqual(true, actual);
         }
+
+        [TestMethod]
+        public void DeleteNotesTest()
+        {
+            var actual = _target.DeleteNotes(1);
+            Assert.AreEqual(true, actual);
+        }
     }
 }
