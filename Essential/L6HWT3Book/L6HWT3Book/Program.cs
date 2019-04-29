@@ -1,9 +1,11 @@
 ﻿namespace L6HWT3Book
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
+            var book = new Book();
+            var notes = new Book.Notes();
         }
     }
 }
