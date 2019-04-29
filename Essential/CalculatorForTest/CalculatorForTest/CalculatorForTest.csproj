@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{0C512A55-F871-481D-AD87-FFA42E62EA54}</ProjectGuid>
+    <ProjectGuid>{809D790F-0A92-4526-8EA6-8AD12D6CC0F2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>UserApp</RootNamespace>
-    <AssemblyName>UserApp</AssemblyName>
+    <RootNamespace>CalculatorForTest</RootNamespace>
+    <AssemblyName>CalculatorForTest</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -39,8 +39,6 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Content Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
