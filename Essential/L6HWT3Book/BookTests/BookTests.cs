@@ -16,8 +16,10 @@ namespace BookTests
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void SetNotesTest()
         {
+            var actual = _target.SetNotes("1 comment",1);
+            Assert.AreEqual(true, actual);
         }
     }
 }
