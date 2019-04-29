@@ -1,4 +1,5 @@
-﻿using CalculatorForTest;
+﻿using System;
+using CalculatorForTest;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CalculatorTest
@@ -25,8 +26,8 @@ namespace CalculatorTest
         [TestMethod]
         public void SubTest()
         {
-            var actual = _target.Sub(1.5, 2.3);
-            Assert.AreEqual(-0.8,actual);
+            var actual = _target.Sub(2.3, 1.5);
+            Assert.AreEqual(0.8,actual);
         }
 
         [TestMethod]
@@ -41,6 +42,14 @@ namespace CalculatorTest
         {
             var actual = _target.Div(2.8, 1.4);
             Assert.AreEqual(2,actual);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(DivideByZeroException))]
+        public void DivErrorTest()
+        {
+            var actual = _target.Div(2.8, 0);
+            Assert.AreEqual(0, actual);
         }
     }
 }
