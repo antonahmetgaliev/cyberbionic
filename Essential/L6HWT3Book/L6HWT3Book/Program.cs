@@ -51,8 +51,8 @@ namespace L6HWT3Book
 
         private static string Show(Book book, string act)
         {
-            if (act == "delete")
-                return book.DeleteNotes(PageReturn(act)) ? "\nDone!" : "\nError!";
+            //if (act == "delete")
+              //  return book.DeleteNotes(PageReturn(act)) ? "\nDone!" : "\nError!";
             try
             {
 
@@ -70,8 +70,8 @@ namespace L6HWT3Book
                
             }
 
-            var error = book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
-            return error;
+            //var error = book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
+            //return error;
         }
         
         private static void Main()

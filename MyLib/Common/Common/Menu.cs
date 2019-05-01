@@ -16,19 +16,22 @@ namespace Common
             return exit.Key != ConsoleKey.N;
 
         }        
-        private static string Color(string str)
+        private static void WriteLineColor(string str)
         {
+            var backgroundColor = Console.BackgroundColor;
+            var foregroundColor = Console.ForegroundColor;
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
             Console.WriteLine("> {0}", str);
-            Console.BackgroundColor = ConsoleColor.Black;
-            Console.ForegroundColor = ConsoleColor.Gray;
-            return str;
+            Console.BackgroundColor = backgroundColor;
+            Console.ForegroundColor = foregroundColor;
         }
+
         private static void Show(string str)
         {
             Console.WriteLine("- {0}", str);
         }
+
         public static string CreateMenuStr(string[] body)
         {
             ConsoleKeyInfo choose;
@@ -41,8 +44,16 @@ namespace Common
                 if (body[0] != "") Console.WriteLine(body[0]);
                 for (var j = 1; j < body.Length; j++)
                 {
-                    if (j == i) _resultStr = Color(body[j]);
-                    else Show(body[j]);
+                    var str = body[j];
+                    if (j == i)
+                    {
+                        WriteLineColor(str);
+                        _resultStr = str;
+                    }
+                    else
+                    {
+                        Show(str);
+                    }
                 }
                 Console.WriteLine("\nPress Esc for exit");
                 choose = Console.ReadKey();
@@ -79,7 +90,7 @@ namespace Common
                 if (body[0] != "") Console.WriteLine(body[0]);
                 for (var j = 1; j < body.Length; j++)
                 {
-                    if (j == i) Color(body[j]);
+                    if (j == i) WriteLineColor(body[j]);
                     else Show(body[j]);
                 }
                 Console.WriteLine("\nPress Esc for exit");

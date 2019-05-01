@@ -24,7 +24,7 @@ namespace L6HWT3Book
                 _notes = new string[count];
             }
 
-            public bool SetNotes(string comment, int page)
+            private void CheckComment(string comment, int page)
             {
                 if (string.IsNullOrEmpty(comment))
                 {
@@ -35,13 +35,26 @@ namespace L6HWT3Book
                 {
                     throw new ArgumentOutOfRangeException(nameof(page));
                 }
+            }
 
+            private void CheckComment(int page)
+            {
+                if (_book.Count < page)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(page));
+                }
+            }
+
+            public bool SetNotes(string comment, int page)
+            {
+                CheckComment(comment, page);
                 _notes[page-1] = comment;
                 return true;
             }
 
             public bool DeleteNotes(int page)
             {
+                CheckComment(page);
                 if (_book.Count < page) return false;
                 _notes[page-1]="";
                 return true;
