@@ -53,7 +53,25 @@ namespace L6HWT3Book
         {
             if (act == "delete")
                 return book.DeleteNotes(PageReturn(act)) ? "\nDone!" : "\nError!";
-            return book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
+            try
+            {
+
+            }
+            catch (ArgumentOutOfRangeException e)
+            {
+               
+            }
+            catch (ArgumentNullException e)
+            {
+               
+            }
+            catch (Exception e)
+            {
+               
+            }
+
+            var error = book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
+            return error;
         }
         
         private static void Main()

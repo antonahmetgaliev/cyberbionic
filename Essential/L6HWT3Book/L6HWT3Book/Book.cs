@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace L6HWT3Book
@@ -25,7 +26,16 @@ namespace L6HWT3Book
 
             public bool SetNotes(string comment, int page)
             {
-                if (_book.Count < page) return false;
+                if (string.IsNullOrEmpty(comment))
+                {
+                    throw new ArgumentNullException(nameof(comment));
+                }
+
+                if (_book.Count < page)
+                {
+                    throw new ArgumentOutOfRangeException(nameof(page));
+                }
+
                 _notes[page-1] = comment;
                 return true;
             }
