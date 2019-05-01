@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 
 namespace L6HWT3Book
@@ -6,7 +7,7 @@ namespace L6HWT3Book
     internal class Program
     {
         private static List<string> Start(){
-            var subSelect = MyLib.CreateMenuInt(new[]
+            var subSelect = Menu.CreateMenuInt(new[]
                 { "Do you want to enter new book or enter the default book?","New","Default"}
             );
             
@@ -15,7 +16,7 @@ namespace L6HWT3Book
             if (subSelect == 1)
             {
                 Console.Write("How many pages u want to see? - ");
-                var pages = MyLib.CheckInt();
+                var pages = ConsoleExtension.CheckInt();
                 for (var i = 0; i < pages; i++)
                 {
                     Console.WriteLine($"Enter text of page №{i + 1}:");
@@ -38,7 +39,7 @@ namespace L6HWT3Book
         {
             Console.Clear();
             Console.Write($"Which page do you want to {act} a comment? - ");
-            return MyLib.CheckInt();
+            return ConsoleExtension.CheckInt();
         }
 
         private static string CommentReturn()
@@ -65,25 +66,25 @@ namespace L6HWT3Book
             do
             {
                 Console.Clear();
-                var select = MyLib.CreateMenuInt(body);
+                var select = Menu.CreateMenuInt(body);
                 switch (select)
                 {
                     case 1:
                         Console.Clear();
                         book = new Book(Start());
-                        MyLib.Done();
+                        ConsoleExtension.WaitingAction();
                         break;
                     case 2:
                         Console.WriteLine(Show(book, "add"));
-                        MyLib.Done();
+                        ConsoleExtension.WaitingAction();
                         break;
                     case 3:
                         Console.WriteLine(Show(book, "change"));
-                        MyLib.Done();
+                        ConsoleExtension.WaitingAction();
                         break;
                     case 4:
                         Console.WriteLine(Show(book, "delete"));
-                        MyLib.Done();
+                        ConsoleExtension.WaitingAction();
                         break;
                     case 5:
                         Console.Clear();
@@ -93,7 +94,7 @@ namespace L6HWT3Book
                         {
                             Console.WriteLine(t);
                         }
-                        MyLib.Done();
+                        ConsoleExtension.WaitingAction();
                         break;
                 }
             } while (true);
