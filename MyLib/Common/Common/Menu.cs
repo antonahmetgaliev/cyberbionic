@@ -15,8 +15,7 @@ namespace Common
             Console.Clear();
             return exit.Key != ConsoleKey.N;
 
-        }
-        
+        }        
         private static string Color(string str)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
@@ -69,7 +68,6 @@ namespace Common
             } while (choose.Key != ConsoleKey.Enter);
             return _resultStr;
         }
-
         public static int CreateMenuInt(string[] body)
         {
             ConsoleKeyInfo choose;
