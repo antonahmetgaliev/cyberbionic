@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 namespace L6HWT3Book
 {
-    internal class Program
+    public class Program
     {
         private static List<string> CreateNewBook()
         {

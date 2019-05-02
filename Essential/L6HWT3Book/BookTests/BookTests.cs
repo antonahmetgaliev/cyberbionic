@@ -18,22 +18,37 @@ namespace BookTests
         [TestMethod]
         public void SetNotesTest()
         {
-            var actual = _target.SetNotes("1 comment",1);
-            Assert.AreEqual(true, actual);
+            _target.SetNotes("1 comment",1);
+            var actual = _target.Show();
+            var expectationList = new List<string>
+            {
+                "1 page Comment: 1 comment", "2 page Comment: ", "3 page Comment: "
+            };
+            CollectionAssert.AreEqual(expectationList, actual);
         }
 
         [TestMethod]
         public void ChangeNotesTest()
         {
-            var actual = _target.ChangeNotes("changed note",1);
-            Assert.AreEqual(true, actual);
+            _target.ChangeNotes("changed note",1);
+            var actual = _target.Show();
+            var expectationList = new List<string>
+            {
+                "1 page Comment: changed note", "2 page Comment: ", "3 page Comment: "
+            };
+            CollectionAssert.AreEqual(expectationList, actual);
         }
 
         [TestMethod]
         public void DeleteNotesTest()
         {
-            var actual = _target.DeleteNotes(1);
-            Assert.AreEqual(true, actual);
+            _target.DeleteNotes(1);
+            var actual = _target.Show();
+            var expectationList = new List<string>
+            {
+                "1 page Comment: ", "2 page Comment: ", "3 page Comment: "
+            };
+            CollectionAssert.AreEqual(expectationList, actual);
         }
     }
 }

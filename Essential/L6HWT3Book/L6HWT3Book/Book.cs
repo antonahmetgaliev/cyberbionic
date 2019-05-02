@@ -15,7 +15,7 @@ namespace L6HWT3Book
             _notes = new Notes(_book.Count);
         }
 
-        public class Notes
+        private class Notes
         {
             private readonly string[]_notes;
 
