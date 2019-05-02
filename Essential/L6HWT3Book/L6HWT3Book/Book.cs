@@ -37,27 +37,15 @@ namespace L6HWT3Book
                 }
             }
 
-            private void CheckComment(int page)
-            {
-                if (_book.Count < page)
-                {
-                    throw new ArgumentOutOfRangeException(nameof(page));
-                }
-            }
-
-            public bool SetNotes(string comment, int page)
+            public void SetNotes(string comment, int page)
             {
                 CheckComment(comment, page);
                 _notes[page-1] = comment;
-                return true;
             }
 
-            public bool DeleteNotes(int page)
+            public void DeleteNotes(int page)
             {
-                CheckComment(page);
-                if (_book.Count < page) return false;
                 _notes[page-1]="";
-                return true;
             }
 
             public string ShowNotes(int page)
@@ -66,19 +54,19 @@ namespace L6HWT3Book
             }
         }
 
-        public bool SetNotes(string comment, int page)
+        public void SetNotes(string comment, int page)
         {
-            return _notes.SetNotes(comment,page);
+            _notes.SetNotes(comment,page);
         }
 
-        public bool DeleteNotes(int page)
+        public void DeleteNotes(int page)
         {
-            return _notes.DeleteNotes(page);
+            _notes.DeleteNotes(page);
         }
 
-        public bool ChangeNotes(string newComment, int page)
+        public void ChangeNotes(string newComment, int page)
         {
-            return SetNotes(newComment, page);
+            SetNotes(newComment, page);
         }
 
         public List<string> Show()
