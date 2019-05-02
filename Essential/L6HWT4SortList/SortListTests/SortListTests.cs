@@ -13,7 +13,7 @@ namespace SortListTests
             var actual = new List<int> {34, 53, 23};
             actual.SortUpList();
             var expectationList = new List<int> { 23, 34, 53 };
-            Assert.AreEqual(expectationList,actual);
+            CollectionAssert.AreEqual(expectationList,actual);
         }
     }
 }
