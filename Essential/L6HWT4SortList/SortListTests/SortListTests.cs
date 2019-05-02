@@ -7,15 +7,13 @@ namespace SortListTests
     [TestClass]
     public class SortListTest
     {
-        private SortList _target;
-        [TestInitialize]
-        public void Init()
-        {
-            _target = new SortList(new List<int> {23,34,53});
-        }
         [TestMethod]
         public void TestMethod1()
         {
+            var actual = new List<int> {34, 53, 23};
+            actual.SortUpList();
+            var expectationList = new List<int> { 23, 34, 53 };
+            Assert.AreEqual(expectationList,actual);
         }
     }
 }

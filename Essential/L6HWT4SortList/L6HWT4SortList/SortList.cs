@@ -2,13 +2,11 @@
 
 namespace L6HWT4SortList
 {
-    public class SortList
+    public static class SortList
     {
-        private List<int> _list;
-
-        public SortList(List<int> list)
+        public static void SortUpList (this List<int> list)
         {
-            _list = list;
+            list.Sort();
         }
     }
 }
