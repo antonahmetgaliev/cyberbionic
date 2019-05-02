@@ -4,18 +4,6 @@ namespace Common
 {
     public static class Menu
     {
-        private static string _resultStr;
-        private static int _resultInt;
-        
-        public static bool Try()
-        {
-            if (_resultInt == 0 && _resultStr == "exit") return false;
-            Console.Write("\nReturn to the previous menu? (Y/N)");
-            var exit = Console.ReadKey();
-            Console.Clear();
-            return exit.Key != ConsoleKey.N;
-
-        }        
         private static void WriteLineColor(string str)
         {
             var backgroundColor = Console.BackgroundColor;
@@ -27,7 +15,7 @@ namespace Common
             Console.ForegroundColor = foregroundColor;
         }
 
-        private static void Show(string str)
+        private static void WriteLineDash(string str)
         {
             Console.WriteLine("- {0}", str);
         }
@@ -36,8 +24,8 @@ namespace Common
         {
             ConsoleKeyInfo choose;
             var i = 1;
-            var quan = body.Length - 1;
-            _resultStr = "";
+            var bodyLength = body.Length - 1;
+            var resultStr = "";
             do
             {
                 Console.Clear();
@@ -48,42 +36,42 @@ namespace Common
                     if (j == i)
                     {
                         WriteLineColor(str);
-                        _resultStr = str;
+                        resultStr = str;
                     }
                     else
                     {
-                        Show(str);
+                        WriteLineDash(str);
                     }
                 }
                 Console.WriteLine("\nPress Esc for exit");
                 choose = Console.ReadKey();
                 switch (choose.Key)
                 {
-                    case ConsoleKey.DownArrow when i == quan:
+                    case ConsoleKey.DownArrow when i == bodyLength:
                         i = 1;
                         break;
                     case ConsoleKey.DownArrow:
                         ++i;
                         break;
                     case ConsoleKey.UpArrow when i == 1:
-                        i = quan;
+                        i = bodyLength;
                         break;
                     case ConsoleKey.UpArrow:
                         --i;
                         break;
                     case ConsoleKey.Escape:
-                        _resultInt = 0;
                         Environment.Exit(0);
-                        return _resultStr = "exit";
+                        return "exit";
                 }
             } while (choose.Key != ConsoleKey.Enter);
-            return _resultStr;
+            return resultStr;
         }
+
         public static int CreateMenuInt(string[] body)
         {
             ConsoleKeyInfo choose;
             var i = 1;
-            var quan = body.Length - 1;
+            var bodyLength = body.Length - 1;
             do
             {
                 Console.Clear();
@@ -91,28 +79,27 @@ namespace Common
                 for (var j = 1; j < body.Length; j++)
                 {
                     if (j == i) WriteLineColor(body[j]);
-                    else Show(body[j]);
+                    else WriteLineDash(body[j]);
                 }
                 Console.WriteLine("\nPress Esc for exit");
                 choose = Console.ReadKey();
                 switch (choose.Key)
                 {
-                    case ConsoleKey.DownArrow when i == quan:
+                    case ConsoleKey.DownArrow when i == bodyLength:
                         i = 1;
                         break;
                     case ConsoleKey.DownArrow:
                         ++i;
                         break;
                     case ConsoleKey.UpArrow when i == 1:
-                        i = quan;
+                        i = bodyLength;
                         break;
                     case ConsoleKey.UpArrow:
                         --i;
                         break;
                     case ConsoleKey.Escape:
-                        _resultStr = "exit";
                         Environment.Exit(0);
-                        return _resultInt = 0;
+                        return 0;
                 }
             } while (choose.Key != ConsoleKey.Enter);
             return i;
