@@ -6,7 +6,8 @@ namespace L6HWT3Book
 {
     internal class Program
     {
-        private static List<string> Start(){
+        private static List<string> CreateNewBook()
+        {
             var subSelect = Menu.CreateMenuInt(new[]
                 { "Do you want to enter new book or enter the default book?","New","Default"}
             );
@@ -19,8 +20,8 @@ namespace L6HWT3Book
                 var pages = ConsoleExtension.CheckInt();
                 for (var i = 0; i < pages; i++)
                 {
-                    Console.WriteLine($"Enter text of page №{i + 1}:");
-                    pageText[i] = Console.ReadLine();
+                    Console.Write($"Enter text of page №{i + 1}: ");
+                    pageText.Add(Console.ReadLine());
                 }
             }
             else
@@ -49,34 +50,40 @@ namespace L6HWT3Book
             return Console.ReadLine();
         }
 
-        private static string Show(Book book, string act)
+        private static void DoAndCheck(Book book, string act)
         {
-            //if (act == "delete")
-              //  return book.DeleteNotes(PageReturn(act)) ? "\nDone!" : "\nError!";
             try
             {
-
+                switch (act)
+                {
+                    case "add":
+                        book.SetNotes(CommentReturn(), PageReturn(act));
+                        break;
+                    case "change":
+                        book.ChangeNotes(CommentReturn(), PageReturn(act));
+                        break;
+                    case "delete":
+                        book.DeleteNotes(PageReturn(act));
+                        break;
+                }
             }
-            catch (ArgumentOutOfRangeException e)
+            catch (ArgumentOutOfRangeException)
             {
-               
+                Console.WriteLine("\nError! (Out of range)");
             }
-            catch (ArgumentNullException e)
+            catch (ArgumentNullException)
             {
-               
+                Console.WriteLine("\nError! (Empty field)");
             }
-            catch (Exception e)
+            catch (Exception)
             {
-               
+                Console.WriteLine("\nError!");
             }
-
-            //var error = book.SetNotes(CommentReturn(), PageReturn(act)) ? "\nDone!" : "\nError!";
-            //return error;
         }
-        
+
         private static void Main()
         {
-            var book = new Book(Start());
+            var book = new Book(CreateNewBook());
             var body = new[]
             {
                 "Menu:", "Enter new book", "Enter new notes", "Change old notes", "Delete old notes", "Show all pages"
@@ -89,19 +96,19 @@ namespace L6HWT3Book
                 {
                     case 1:
                         Console.Clear();
-                        book = new Book(Start());
+                        book = new Book(CreateNewBook());
                         ConsoleExtension.WaitingAction();
                         break;
                     case 2:
-                        Console.WriteLine(Show(book, "add"));
+                        DoAndCheck(book, "add");
                         ConsoleExtension.WaitingAction();
                         break;
                     case 3:
-                        Console.WriteLine(Show(book, "change"));
+                        DoAndCheck(book, "change");
                         ConsoleExtension.WaitingAction();
                         break;
                     case 4:
-                        Console.WriteLine(Show(book, "delete"));
+                        DoAndCheck(book, "delete");
                         ConsoleExtension.WaitingAction();
                         break;
                     case 5:

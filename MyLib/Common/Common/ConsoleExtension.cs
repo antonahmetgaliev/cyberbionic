@@ -15,6 +15,7 @@ namespace Common
             }
             return value;
         }
+
         public static double CheckDouble()
         {
             double value;
@@ -27,6 +28,7 @@ namespace Common
 
             return value;
         }
+
         public static void WaitingAction()
         {
             Console.WriteLine("\nPress any button to continue.");
