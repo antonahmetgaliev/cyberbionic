@@ -17,9 +17,9 @@ namespace L5HWT4Article
 
         private string Product(int index)
         {
-            var productName = _shop[index].ShowProductName();
-            var shopName = _shop[index].ShowShopName();
-            var cost = _shop[index].ShowCost();
+            var productName = _shop[index].ShowProductName;
+            var shopName = _shop[index].ShowShopName;
+            var cost = _shop[index].ShowCost;
             return productName + " " + shopName + " " + cost + " UAH";
         }
 
@@ -32,7 +32,7 @@ namespace L5HWT4Article
         {
             for (var i = 0; i < _shop.Count; i++)
             {
-                if (name != _shop[i].ShowProductName()) continue;
+                if (name != _shop[i].ShowProductName) continue;
                 return Product(i);
             }
             return "Error";

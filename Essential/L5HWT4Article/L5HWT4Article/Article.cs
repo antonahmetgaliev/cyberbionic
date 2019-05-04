@@ -13,19 +13,10 @@
             _cost = cost;
         }
 
-        public string ShowProductName()
-        {
-            return _productName;
-        }
+        public string ShowProductName => _productName;
 
-        public string ShowShopName()
-        {
-            return _shopName;
-        }
+        public string ShowShopName => _shopName;
 
-        public int ShowCost()
-        {
-            return _cost;
-        }
+        public int ShowCost => _cost;
     }
 }
