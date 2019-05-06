@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L7HWENotebook", "L7HWENotebook\L7HWENotebook.csproj", "{5F78BAB6-941F-40BD-9E53-147098EB6409}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L6HWENotebookTests", "L6HWENotebookTests\L6HWENotebookTests.csproj", "{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UntTests", "UntTests", "{782FFEE8-DCDF-4A10-A8D8-40CAA4B84E09}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{5F78BAB6-941F-40BD-9E53-147098EB6409}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5F78BAB6-941F-40BD-9E53-147098EB6409}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5F78BAB6-941F-40BD-9E53-147098EB6409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C} = {782FFEE8-DCDF-4A10-A8D8-40CAA4B84E09}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AEA8466F-E490-4496-8D91-DA35C3FADB1C}
