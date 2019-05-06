@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace L6HWENotebookTests
 {
     [TestClass]
-    public class UnitTest1
+    public class NotebookTests
     {
         private Notebook _target; 
         [TestInitialize]

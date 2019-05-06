@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L6HWENotebookTests", "L6HWE
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UntTests", "UntTests", "{782FFEE8-DCDF-4A10-A8D8-40CAA4B84E09}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\..\MyLib\Common\Common\Common.csproj", "{356CEC8E-7214-4561-9336-7A7C73005F55}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CBF941D0-8BB5-4DD3-A1A0-982578E3239C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{356CEC8E-7214-4561-9336-7A7C73005F55}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{356CEC8E-7214-4561-9336-7A7C73005F55}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{356CEC8E-7214-4561-9336-7A7C73005F55}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{356CEC8E-7214-4561-9336-7A7C73005F55}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

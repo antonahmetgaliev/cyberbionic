@@ -47,5 +47,11 @@
   <ItemGroup>
     <Content Include="Readme.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\MyLib\Common\Common\Common.csproj">
+      <Project>{356cec8e-7214-4561-9336-7a7c73005f55}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
