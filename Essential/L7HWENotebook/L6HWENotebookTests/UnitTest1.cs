@@ -12,9 +12,23 @@ namespace L6HWENotebookTests
         {
             _target = new Notebook("80 qq","Lenovo", 5000);
         }
+
         [TestMethod]
-        public void TestMethod1()
+        public void ModelTest()
         {
+            Assert.AreEqual("80 qq", _target.Model);
+        }
+
+        [TestMethod]
+        public void ManufacturerTest()
+        {
+            Assert.AreEqual("Lenovo", _target.Manufacturer);
+        }
+
+        [TestMethod]
+        public void PriceTest()
+        {
+            Assert.AreEqual(5000, _target.Price);
         }
     }
 }
