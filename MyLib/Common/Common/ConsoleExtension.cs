@@ -34,5 +34,12 @@ namespace Common
             Console.WriteLine("\nPress any button to continue.");
             Console.ReadKey();
         }
+
+        public static void ClearExcess(int numberOfRow)
+        {
+            if (Console.CursorTop + numberOfRow <= 24) return;
+            WaitingAction();
+            Console.Clear();
+        }
     }
 }
