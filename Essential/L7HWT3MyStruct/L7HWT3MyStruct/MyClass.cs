@@ -4,9 +4,14 @@
     {
         public string change; // Requirement task conditions.
 
-        public MyClass(string changed)
+        public MyClass(string str)
         {
-            change = changed;
+            change = str;
+        }
+
+        public void Change(string str)
+        {
+            change = str;
         }
     }
 }
