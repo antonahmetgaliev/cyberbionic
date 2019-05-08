@@ -14,6 +14,7 @@ namespace L8HWEBirthday
             Console.Write("Enter the day of your birth - ");
             var birthDay = ConsoleExtension.CheckInt();
             var birthday = new DateTime(birthYear, birthMonth, birthDay);
+            var today = DateTime.Now;
         }
     }
 }
