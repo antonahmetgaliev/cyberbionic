@@ -13,11 +13,12 @@ namespace L8HWEBirthday
             var birthDay = ConsoleExtension.CheckInt();
             var today = DateTime.Now;
             int leftYear;
-            if (today.Month > birthMonth) leftYear = today.Year;
+            if (today.Month < birthMonth) leftYear = today.Year;
             else leftYear = today.Year + 1;
             var birthday = new DateTime(leftYear, birthMonth, birthDay);
             var left = birthday - today;
-
+            Console.WriteLine($"Before your birthday is left: {left.Days} days");
+            Console.ReadKey();
         }
     }
 }
