@@ -13,6 +13,7 @@ namespace L8HWEBirthday
             var birthMonth = ConsoleExtension.CheckInt();
             Console.Write("Enter the day of your birth - ");
             var birthDay = ConsoleExtension.CheckInt();
+            var birthday = new DateTime(birthYear, birthMonth, birthDay);
         }
     }
 }
