@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.28822.285
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L8HWT3Premium", "L8HWT3Premium\L8HWT3Premium.csproj", "{0FCF98CB-5D24-4629-84CF-9B70EC699ADE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L8HWT3PremiumTests", "L8HWT3PremiumTests\L8HWT3PremiumTests.csproj", "{18216FF5-842A-47E9-AC97-65BADFAFB296}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{BDDB19E9-8B98-4D70-976B-AED4516F4305}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +19,16 @@ Global
 		{0FCF98CB-5D24-4629-84CF-9B70EC699ADE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0FCF98CB-5D24-4629-84CF-9B70EC699ADE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0FCF98CB-5D24-4629-84CF-9B70EC699ADE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18216FF5-842A-47E9-AC97-65BADFAFB296}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18216FF5-842A-47E9-AC97-65BADFAFB296}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18216FF5-842A-47E9-AC97-65BADFAFB296}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18216FF5-842A-47E9-AC97-65BADFAFB296}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{18216FF5-842A-47E9-AC97-65BADFAFB296} = {BDDB19E9-8B98-4D70-976B-AED4516F4305}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {82B2F0FF-1F48-4215-B2FD-23845A1F64E9}

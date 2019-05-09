@@ -8,4 +8,4 @@
 	Accauntant:
 		- Создать метод bool AskForBonus(Post worker, int hours)
 		- Создать enum Accauntant, в котором будут содержаться должности сотрудников как имена констант;
-	- Создать проект по шаблону UnitTests;
+	+ Создать проект по шаблону UnitTests;
