@@ -6,15 +6,29 @@ namespace L8HWT2PrintColor
     {
         public static void Print(string str, int color)
         {
+            Console.Clear();
             Console.ForegroundColor = (ConsoleColor) color;
             Console.WriteLine(str);
         }
 
-        private enum Color : int
+        public enum Color : int
         {
-            blue = ConsoleColor.Blue,
-            red = ConsoleColor.Red
-
+            black,
+            darkBlue,
+            darkGreen,
+            darkCyan,
+            darkRed,
+            darkMagenta,
+            darkYellow,
+            gray,
+            darkGray,
+            blue,
+            green,
+            cyan,
+            red,
+            magenta,
+            yellow,
+            white
         }
     }
 }

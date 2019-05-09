@@ -99,10 +99,48 @@ namespace Common
                         break;
                     case ConsoleKey.Escape:
                         Environment.Exit(0);
-                        return 0;
+                        break;
                 }
             } while (choose.Key != ConsoleKey.Enter);
-            return i;
+            return i-1;
+        }
+
+        public static int CreateMenuIntWithoutEsc(string[] body)
+        {
+            ConsoleKeyInfo choose;
+            var i = 1;
+            var bodyLength = body.Length - 1;
+            do
+            {
+                Console.Clear();
+                if (body[0] != "") Console.WriteLine(body[0]);
+                for (var j = 1; j < body.Length; j++)
+                {
+                    if (j == i) WriteLineColor(body[j]);
+                    else WriteLineDash(body[j]);
+                }
+                //Console.WriteLine("\nPress Esc for exit");
+                choose = Console.ReadKey();
+                switch (choose.Key)
+                {
+                    case ConsoleKey.DownArrow when i == bodyLength:
+                        i = 1;
+                        break;
+                    case ConsoleKey.DownArrow:
+                        ++i;
+                        break;
+                    case ConsoleKey.UpArrow when i == 1:
+                        i = bodyLength;
+                        break;
+                    case ConsoleKey.UpArrow:
+                        --i;
+                        break;
+                    case ConsoleKey.Escape:
+                        Environment.Exit(0);
+                        break;
+                }
+            } while (choose.Key != ConsoleKey.Enter);
+            return i-1;
         }
     }
 }
