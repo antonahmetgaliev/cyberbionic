@@ -9,6 +9,7 @@ namespace L8HWT3PremiumTests
         [TestMethod]
         public void TestMethod1()
         {
+            var actual = Accauntant.AskForBonus(Accauntant.Post.worker, 200);
         }
     }
 }
