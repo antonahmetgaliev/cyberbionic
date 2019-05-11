@@ -15,7 +15,7 @@ namespace L8HWT3PremiumTests
         [TestMethod]
         public void AskForBonus_Worker_IsBonus_Test()
         {
-            Assert.IsFalse(Accountant.AskForBonus(Accountant.Post.Worker, 240));
+            Assert.IsTrue(Accountant.AskForBonus(Accountant.Post.Worker, 240));
         }
 
         [TestMethod]
@@ -27,7 +27,7 @@ namespace L8HWT3PremiumTests
         [TestMethod]
         public void AskForBonus_Manager_IsBonus_Test()
         {
-            Assert.IsFalse(Accountant.AskForBonus(Accountant.Post.Manager, 200));
+            Assert.IsTrue(Accountant.AskForBonus(Accountant.Post.Manager, 200));
         }
 
         [TestMethod]
@@ -39,7 +39,7 @@ namespace L8HWT3PremiumTests
         [TestMethod]
         public void AskForBonus_Accountant_IsBonus_Test()
         {
-            Assert.IsFalse(Accountant.AskForBonus(Accountant.Post.Accountant, 220));
+            Assert.IsTrue(Accountant.AskForBonus(Accountant.Post.Accountant, 220));
         }
     }
 }

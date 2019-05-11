@@ -6,7 +6,7 @@ namespace L8HWT3Premium
     {
         public static bool AskForBonus(Post worker, int hours)
         {
-            return (int) worker < hours;
+            return (int) worker <= hours;
         }
 
         public enum Post
