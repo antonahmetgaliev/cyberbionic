@@ -2,18 +2,18 @@
 
 namespace L8HWT3Premium
 {
-    public static class Accauntant
+    public static class Accountant
     {
         public static bool AskForBonus(Post worker, int hours)
         {
-            if (worker >= hours) return false;
+            return (int) worker < hours;
         }
 
         public enum Post
         {
-            worker = 240,
-            manager = 200,
-            accountant = 220
+            Worker = 240,
+            Manager = 200,
+            Accountant = 220
         }
     }
 }
