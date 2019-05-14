@@ -15,7 +15,7 @@ namespace L9HWEAnonymous
             var num3 = ConsoleExtension.CheckInt();
             AverageDelegate averageDelegate = (a, b, c) => (a + b + c) / 3;
             var average = averageDelegate(num1, num2, num3);
-            Console.WriteLine($"\nAverage of {num1}, {num2}, {num3} = {average}");
+            Console.WriteLine($"\nAverage of {num1}, {num2}, {num3} = {0:00.00}", average);
             Console.ReadKey();
         }
     }
