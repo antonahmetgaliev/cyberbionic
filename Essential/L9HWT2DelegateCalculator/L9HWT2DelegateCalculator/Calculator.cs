@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace L9HWT2DelegateCalculator
+﻿namespace L9HWT2DelegateCalculator
 {
     public static class Calculator
     {
@@ -24,15 +22,7 @@ namespace L9HWT2DelegateCalculator
         public static int Div(int a, int b)
         {
             DelegateCalculator delegateDiv = (i, i1) => a / b;
-            try
-            {
-                return delegateDiv(a, b);
-            }
-            catch (DivideByZeroException)
-            {
-                Console.WriteLine("Division by 0 is prohibited.");
-                throw;
-            }
+            return delegateDiv(a, b);
         }
     }
 }
