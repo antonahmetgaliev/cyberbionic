@@ -1,10 +1,13 @@
-﻿namespace L9HWT3DelegateAverage
+﻿using System;
+
+namespace L9HWT3DelegateAverage
 {
     internal class Program
     {
         private static void Main()
         {
-            //DelegateAverage.Average();
+            Console.WriteLine(DelegateAverage.GetAverage(4));
+            Console.ReadKey();
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using L9HWT3DelegateAverage;
+﻿using L9HWT3DelegateAverage;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace L9HWT3AverageTests
@@ -10,8 +9,7 @@ namespace L9HWT3AverageTests
         [TestMethod]
         public void GetAverageTest()
         {
-            var actual = DelegateAverage.GetAverage(new List<int>(){2,4});
-            Assert.AreEqual(3, actual);
+            Assert.IsNotNull(DelegateAverage.GetAverage(4));
         }
     }
 }

@@ -1,27 +1,32 @@
-﻿using System.Collections.Generic;
-using System.Linq;
+﻿using System;
+using System.Collections.Generic;
 
 namespace L9HWT3DelegateAverage
 {
     public static class DelegateAverage
     {
         public delegate int DelegateForList(int a);
+        public delegate double AverageDelegate(List<DelegateForList> delegateForLists);
 
-        public delegate double AverageDelegate(List<int> delegateForLists);
-
-        public static double GetAverage(List<int> listForDelegate)
+        public static double GetAverage(int countOfDelegate)
         {
-            var delegateForList = new List<int>();
+            var delegateForList = new List<DelegateForList>(countOfDelegate);
             DelegateForList averageDelegate = i => i;
-            foreach (var t in listForDelegate)
+            for (var i = 0; i < delegateForList.Count; i++)
             {
-                delegateForList.Add(averageDelegate(t));
+                delegateForList[i] = averageDelegate;
             }
-            AverageDelegate averageForDelegate = intOfDelegates => intOfDelegates.ToArray().Sum()/intOfDelegates.Count;
+            AverageDelegate averageForDelegate = delegate (List<DelegateForList> intOfDelegates)
+            {
+                var sum = 0.0;
+                var random = new Random();
+                for (var i = 0; i < intOfDelegates.Count; i++)
+                {
+                    sum = intOfDelegates[i].Invoke(random.Next(10));
+                }
+                return sum;
+            };
             return averageForDelegate(delegateForList);
-            //var sumOfDelegate = delegateForList.ToArray().Sum();
-            //averageDelegate = delegate(List<DelegateForList> delegateForLists)
-            //{return delegateForLists.ToArray().Sum() / delegateForLists.Count;};
         }
     }
 }
