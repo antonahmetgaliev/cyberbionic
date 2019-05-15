@@ -10,11 +10,11 @@ namespace L9HWT3DelegateAverage
 
         public static double GetAverage(int countOfDelegate)
         {
-            var delegateForList = new List<DelegateForList>(countOfDelegate);
+            var delegateForList = new List<DelegateForList>();
             DelegateForList averageDelegate = i => i;
-            for (var i = 0; i < delegateForList.Count; i++)
+            for (var i = 0; i < countOfDelegate; i++)
             {
-                delegateForList[i] = averageDelegate;
+                delegateForList.Add(averageDelegate);
             }
             AverageDelegate averageForDelegate = delegate (List<DelegateForList> intOfDelegates)
             {
@@ -22,7 +22,7 @@ namespace L9HWT3DelegateAverage
                 var random = new Random();
                 for (var i = 0; i < intOfDelegates.Count; i++)
                 {
-                    sum = intOfDelegates[i].Invoke(random.Next(10));
+                    sum = intOfDelegates[i].Invoke(random.Next(100));
                 }
                 return sum;
             };

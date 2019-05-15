@@ -6,7 +6,7 @@ namespace L9HWT3DelegateAverage
     {
         private static void Main()
         {
-            Console.WriteLine(DelegateAverage.GetAverage(4));
+            Console.WriteLine(DelegateAverage.GetAverage(9));
             Console.ReadKey();
         }
     }
