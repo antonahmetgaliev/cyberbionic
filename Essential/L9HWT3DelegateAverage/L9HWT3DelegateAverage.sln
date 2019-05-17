@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L9HWT3DelegateAverage", "L9
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L9HWT3AverageTests", "L9HWT3AverageTests\L9HWT3AverageTests.csproj", "{282BAB37-0E79-4AC9-83D0-08A91672892B}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common", "..\..\MyLib\Common\Common\Common.csproj", "{37840360-8C06-4BFB-8455-62FC2863F51F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{282BAB37-0E79-4AC9-83D0-08A91672892B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{282BAB37-0E79-4AC9-83D0-08A91672892B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{282BAB37-0E79-4AC9-83D0-08A91672892B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37840360-8C06-4BFB-8455-62FC2863F51F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37840360-8C06-4BFB-8455-62FC2863F51F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37840360-8C06-4BFB-8455-62FC2863F51F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37840360-8C06-4BFB-8455-62FC2863F51F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

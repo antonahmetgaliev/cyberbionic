@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 
 namespace L9HWT3DelegateAverage
 {
@@ -6,7 +7,9 @@ namespace L9HWT3DelegateAverage
     {
         private static void Main()
         {
-            Console.WriteLine(DelegateAverage.GetAverage(9));
+            Console.Write("Enter count of number - ");
+            var count = ConsoleExtension.CheckInt();
+            Console.WriteLine($"Average of {count} random numbers = {DelegateAverage.GetAverage(count)}");
             Console.ReadKey();
         }
     }
