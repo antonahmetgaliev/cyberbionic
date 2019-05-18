@@ -2,7 +2,7 @@
 
 namespace L1HWT4Figure
 {
-    class Program
+    internal class Program
     {
         private static int CheckInt()
         {
@@ -42,7 +42,7 @@ namespace L1HWT4Figure
                     var y = CheckInt();
                     figure.InputPoint(Convert.ToString(i), x, y);
                 }
-                Console.WriteLine("Perimetr of ur figere {0} = {1} sm", figure.Name, figure.PerimeterCalculator());
+                Console.WriteLine("Perimetr of ur figure {0} = {1} sm", figure.Name, figure.PerimeterCalculator());
             } while (Try());
         }
     }

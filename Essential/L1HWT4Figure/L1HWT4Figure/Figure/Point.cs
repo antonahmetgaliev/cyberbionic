@@ -1,6 +1,6 @@
 ﻿namespace L1HWT4Figure.Figure
 {
-    class Point
+    internal class Point
     {
         public string Letter { get; set; }
         public int X { get; set; }

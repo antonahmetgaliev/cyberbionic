@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace L1HWT4Figure.Figure
 {
-    class Figure
+    internal class Figure
     {
         private List<Point> _points;
         public string Name { get; set; }
