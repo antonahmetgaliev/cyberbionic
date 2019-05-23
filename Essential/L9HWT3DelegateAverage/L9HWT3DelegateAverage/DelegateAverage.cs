@@ -17,6 +17,7 @@ namespace L9HWT3DelegateAverage
             {
                 delegateForList.Add(averageDelegate);
             }
+
             AverageDelegate averageForDelegate = delegate (List<DelegateForList> intOfDelegates)
             {
                 var sum = 0.0;
@@ -26,6 +27,7 @@ namespace L9HWT3DelegateAverage
                 }
                 return sum/intOfDelegates.Count;
             };
+
             return averageForDelegate(delegateForList);
         }
     }

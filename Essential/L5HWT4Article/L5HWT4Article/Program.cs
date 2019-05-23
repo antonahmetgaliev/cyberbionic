@@ -4,8 +4,58 @@ namespace L5HWT4Article
 {
     internal class Program
     {
+        static string timeConversion(string s)
+        {
+            //07:05:45PM        
+            var clockStr = Convert.ToString($"{s[0]}{s[1]}{s[2]}{s[3]}{s[4]}{s[5]}{s[6]}{s[7]}");
+            if (s[8] != 'P') return clockStr;
+            var clockFirst = Convert.ToInt32($"{s[0]}{s[1]}");
+            string clockFirstStr="";
+            switch (clockFirst)
+            {
+                case 01:
+                    clockFirstStr="13";
+                    break;
+                case 02:
+                    clockFirstStr = "14";
+                    break;
+                case 03:
+                    clockFirstStr = "15";
+                    break;
+                case 04:
+                    clockFirstStr = "16";
+                    break;
+                case 05:
+                    clockFirstStr = "17";
+                    break;
+                case 06:
+                    clockFirstStr = "18";
+                    break;
+                case 07:
+                    clockFirstStr = "19";
+                    break;
+                case 08:
+                    clockFirstStr = "20";
+                    break;
+                case 09:
+                    clockFirstStr = "21";
+                    break;
+                case 10:
+                    clockFirstStr = "22";
+                    break;
+                case 11:
+                    clockFirstStr = "23";
+                    break;
+                case 12:
+                    clockFirstStr = "24";
+                    break;
+            }
+
+            return Convert.ToString(clockFirstStr + s[2] + s[3] + s[4] + s[5] + s[6] + s[7]);
+        }
         private static int CheckInt()
         {
+            
             int value;
             var text = Console.ReadLine();
             while (!int.TryParse(text, out value))
@@ -39,6 +89,7 @@ namespace L5HWT4Article
 
         private static void Main()
         {
+            timeConversion("12:12:12PM");
             var menu = new Menu();
             var shopStore = new Store();
             var body = new[]
