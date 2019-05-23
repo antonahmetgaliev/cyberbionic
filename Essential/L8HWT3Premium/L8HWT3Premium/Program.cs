@@ -26,7 +26,6 @@ namespace L8HWT3Premium
                     ShowBonus(Accountant.Post.Manager, hours);
                     break;
             }
-
             Console.ReadKey();
         }
 
