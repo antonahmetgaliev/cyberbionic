@@ -2,7 +2,7 @@
 
 namespace L1HWE1Address
 {
-    class Address
+    internal class Address
     {
         public string Index { get; set; }
         public string Country { get; set; }
@@ -10,19 +10,21 @@ namespace L1HWE1Address
         public string Street { get; set; }
         public string House { get; set; }
         public string Apartment { get; set; }
-
     }
-    class Program
+
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
-            Address home = new Address();
-            home.Index = "133";
-            home.Country = "Ukraine";
-            home.City = "Berdichev";
-            home.Street = "Chudnovskaya";
-            home.House = "102";
-            home.Apartment = "A1";
+            var home = new Address
+            {
+                Index = "133",
+                Country = "Ukraine",
+                City = "Berdichev",
+                Street = "Chudnovskaya",
+                House = "102",
+                Apartment = "A1"
+            };
             Console.WriteLine(home.Index);
             Console.WriteLine(home.Country);
             Console.WriteLine(home.City);
