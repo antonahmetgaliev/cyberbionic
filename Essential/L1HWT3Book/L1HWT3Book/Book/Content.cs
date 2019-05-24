@@ -2,7 +2,7 @@
 
 namespace L1HWT3Book
 {
-    class Content
+    internal class Content
     {
         public string Text { get; set; }
 

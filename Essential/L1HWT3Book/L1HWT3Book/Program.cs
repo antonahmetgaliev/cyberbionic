@@ -2,9 +2,9 @@
 
 namespace L1HWT3Book
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
             Console.Write("Input name of book - ");
             var name = Console.ReadLine();

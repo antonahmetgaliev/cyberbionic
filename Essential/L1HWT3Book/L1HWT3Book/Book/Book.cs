@@ -1,12 +1,12 @@
 ﻿namespace L1HWT3Book
 {
-    class Book
+    internal class Book
     {
         private Title _title;
         private Author _author;
         private Content _content;
 
-        void InitBook()
+        private void InitBook()
         {
             _title = new Title();
             _author = new Author();

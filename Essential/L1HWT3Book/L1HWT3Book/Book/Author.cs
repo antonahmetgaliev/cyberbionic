@@ -2,7 +2,7 @@
 
 namespace L1HWT3Book
 {
-    class Author
+    internal class Author
     {
         public string Name { get; set; } 
 
