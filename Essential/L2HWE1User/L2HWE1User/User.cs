@@ -2,13 +2,12 @@
 
 namespace L2HWE1User
 {
-    class User
+    internal class User
     {
         private string Login { get; }
         private string Name { get; }
         private string Surname { get; }
         private string Age { get; }
-        private string Data { get; }
 
         public User(string login, string name, string surname, string age, string data)
         {
@@ -16,7 +15,6 @@ namespace L2HWE1User
             Name = name;
             Surname = surname;
             Age = age;
-            Data = data;
         }
 
         public void Show()

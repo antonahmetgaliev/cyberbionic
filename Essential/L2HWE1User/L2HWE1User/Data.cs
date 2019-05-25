@@ -1,6 +1,6 @@
 ﻿namespace L2HWE1User
 {
-    class Data
+    internal class Data
     {
         private readonly User[] _user;
         private string DataInfo { get; }

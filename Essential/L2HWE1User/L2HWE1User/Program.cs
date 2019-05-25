@@ -2,16 +2,17 @@
 
 namespace L2HWE1User
 {
-    class Program
+    internal class Program
     {
         private static bool Continue()
         {
             Console.Write("Would you like to continue? (y/n) - ");
-            var choise = Console.ReadLine();
+            var choose = Console.ReadLine();
             Console.Clear();
-            return choise != "y";
+            return choose != "y";
         }
-        static void Main()
+
+        private static void Main()
         {
             var id = -1;
             Console.Write("Input date of completion (Day.Month.Year)");
@@ -21,8 +22,8 @@ namespace L2HWE1User
             do
             {
                 Console.Write("Create new User or Show? (n/s)");
-                var choise = Console.ReadLine();
-                switch (choise)
+                var choose = Console.ReadLine();
+                switch (choose)
                 {
                     case "n":
                     {
@@ -42,7 +43,7 @@ namespace L2HWE1User
                     case "s":
                     {
                         Console.Write("Input id of User - ");
-                        var idSearch = int.Parse(Console.ReadLine());
+                        var idSearch = int.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                         if (idSearch != -1)
                         {
                             if (idSearch > id)
