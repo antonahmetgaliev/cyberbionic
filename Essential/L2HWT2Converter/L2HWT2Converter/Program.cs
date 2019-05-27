@@ -50,7 +50,7 @@ namespace L2HWT2Converter
                             case "EUR":
                             case "RUB":
                                 Console.Write("Input UAH - ");
-                                var uah = double.Parse(Console.ReadLine());
+                                var uah = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                                 Console.WriteLine("{0} UAH = {1} {2}",uah,convert.ConvertToCurr(uah, curr),curr);
                                 checkCurr = true;
                                 break;
@@ -73,7 +73,7 @@ namespace L2HWT2Converter
                             case "EUR":
                             case "RUB":
                                 Console.Write("Input {0} - ", curr);
-                                var currDoub = double.Parse(Console.ReadLine());
+                                var currDoub = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                                 Console.WriteLine("{0} {1} = {2} UAH",currDoub,curr,convert.ConvertToUah(currDoub, curr));
                                 checkCurr = true;
                                 break;
