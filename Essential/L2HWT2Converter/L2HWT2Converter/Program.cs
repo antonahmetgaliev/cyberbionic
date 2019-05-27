@@ -26,11 +26,11 @@ namespace L2HWT2Converter
                     if (check.Key == ConsoleKey.Y)
                     {
                         Console.Write("\nInput new Kurs USD - ");
-                        usd = double.Parse(Console.ReadLine());
+                        usd = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                         Console.Write("Input new Kurs EUR - ");
-                        eur = double.Parse(Console.ReadLine());
+                        eur = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                         Console.Write("Input new Kurs RUB - ");
-                        rub = double.Parse(Console.ReadLine());
+                        rub = double.Parse(Console.ReadLine() ?? throw new InvalidOperationException());
                     }
                 } while (check.Key == ConsoleKey.Y);
 
