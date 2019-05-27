@@ -1,6 +1,6 @@
 ﻿namespace L2HWT2Converter
 {
-    class Converter
+    internal class Converter
     {
         private readonly double _usd;
         private readonly double _eur;
