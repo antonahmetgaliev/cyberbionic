@@ -11,7 +11,8 @@ namespace L2HWT2Converter
             Console.Clear();
             return check.Key == ConsoleKey.Y;
         }
-        static void Main()
+
+        private static void Main()
         {
             do
             {
