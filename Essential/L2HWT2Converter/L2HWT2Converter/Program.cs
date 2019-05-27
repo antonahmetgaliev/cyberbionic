@@ -4,7 +4,7 @@ namespace L2HWT2Converter
 {
     internal class Program
     {
-        static bool Try()
+        private static bool Try()
         {
             Console.Write("Do u want to try again? (Y/N)");
             var check = Console.ReadKey();
