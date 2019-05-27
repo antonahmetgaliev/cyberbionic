@@ -2,7 +2,7 @@
 
 namespace L2HWT2Converter
 {
-    class Program
+    internal class Program
     {
         static bool Try()
         {
