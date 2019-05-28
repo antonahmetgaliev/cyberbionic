@@ -2,7 +2,7 @@
 
 namespace L2HWT3Employee
 {
-    class Program
+    internal class Program
     {
         private static void StandardWorkers(Employee employee)
         {
