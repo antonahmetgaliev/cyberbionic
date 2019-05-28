@@ -32,25 +32,17 @@ namespace L2HWT3Employee
                 if (!CheckDoub(str)) Console.WriteLine("Enter error!");
             } while (!CheckDoub(str));
             var value = double.Parse(str ?? throw new InvalidOperationException());
-            switch (doit)
-            {
-                case 1:
-                    employee.Salary(value);
-                    break;
-                case 2:
-                    employee.DirPer(value);
-                    break;
-                case 3:
-                    employee.AccPer(value);
-                    break;
-                case 4:
-                    employee.EmpPer(value);
-                    break;
-            }
+            if (doit == 1)
+                employee.Salary(value);
+            else if (doit == 2)
+                employee.DirPer(value);
+            else if (doit == 3)
+                employee.AccPer(value);
+            else if (doit == 4) employee.EmpPer(value);
+
             Console.Write("Do u want return to menu? (Y/N)");
             check = Console.ReadKey();
-            if (check.Key == ConsoleKey.Y) return true;
-            return false;
+            return check.Key == ConsoleKey.Y;
         }
 
         private static void ShowSalary(Employee employee, int counter)
