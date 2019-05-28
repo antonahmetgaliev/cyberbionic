@@ -23,37 +23,34 @@ namespace L2HWT3Employee
         {
             Console.Write("Do u want to change? (Y/N)");
             var check = Console.ReadKey();
-            if (check.Key == ConsoleKey.Y)
+            if (check.Key != ConsoleKey.Y) return true;
+            string str;
+            do
             {
-                string str;
-                do
-                {
-                    Console.Write("\nInput new value - ");
-                    str = Console.ReadLine();
-                    if (!CheckDoub(str)) Console.WriteLine("Enter error!");
-                } while (!CheckDoub(str));
-                var value = double.Parse(str);
-                switch (doit)
-                {
-                    case 1:
-                        employee.Salary(value);
-                        break;
-                    case 2:
-                        employee.DirPer(value);
-                        break;
-                    case 3:
-                        employee.AccPer(value);
-                        break;
-                    case 4:
-                        employee.EmpPer(value);
-                        break;
-                }
-                Console.Write("Do u want return to menu? (Y/N)");
-                check = Console.ReadKey();
-                if (check.Key == ConsoleKey.Y) return true;
-                return false;
+                Console.Write("\nInput new value - ");
+                str = Console.ReadLine();
+                if (!CheckDoub(str)) Console.WriteLine("Enter error!");
+            } while (!CheckDoub(str));
+            var value = double.Parse(str);
+            switch (doit)
+            {
+                case 1:
+                    employee.Salary(value);
+                    break;
+                case 2:
+                    employee.DirPer(value);
+                    break;
+                case 3:
+                    employee.AccPer(value);
+                    break;
+                case 4:
+                    employee.EmpPer(value);
+                    break;
             }
-            return true;
+            Console.Write("Do u want return to menu? (Y/N)");
+            check = Console.ReadKey();
+            if (check.Key == ConsoleKey.Y) return true;
+            return false;
         }
 
         private static void ShowSalary(Employee employee, int counter)
