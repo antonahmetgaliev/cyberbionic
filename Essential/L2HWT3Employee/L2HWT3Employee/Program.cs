@@ -54,46 +54,47 @@ namespace L2HWT3Employee
             Console.WriteLine("Salary : {0} USD", employee.ShowSalary(counter));
             Console.WriteLine("The amount of the tax charge : {0} USD", employee.ShowTax(counter));
         }
-        static void Main()
+
+        private static void Main()
         {
             var jobs = 5;
             var menu = new Menu();
             bool levelCheck;
             do
             {
-                string acces;
+                string access;
                 do
                 {
                     levelCheck = false;
                     string[] body = {"Select your access level", "director", "accountant", "employee"};
-                    acces = menu.CreateMenuStr(body);
-                    if (acces == "exit") Environment.Exit(0);
-                    bool accesCheck;
+                    access = menu.CreateMenuStr(body);
+                    if (access == "exit") Environment.Exit(0);
+                    bool accessCheck;
                     do
                     {
                         Console.Clear();
                         Console.Write("Enter password of your access - ");
                         var password = Console.ReadLine();
-                        if (accesCheck = (acces != password))
+                        if (accessCheck = (access != password))
                         {
                             Console.Write("Access error!Do u want to change acces level? (Y/N)");
                             var check = Console.ReadKey();
                             if (check.Key != ConsoleKey.Y) continue;
-                            accesCheck = false;
+                            accessCheck = false;
                             levelCheck = true;
                         }
                         else
                         {
                             Console.Clear();
-                            Console.WriteLine("Hello {0}!", acces);
+                            Console.WriteLine("Hello {0}!", access);
                         }
-                    } while (accesCheck);
+                    } while (accessCheck);
                 } while (levelCheck);
 
                 var employee = new Employee();
                 StandardWorkers(employee);
                 int doit;
-                switch (acces)
+                switch (access)
                 {
                     case "director":
                         var exit = true;
