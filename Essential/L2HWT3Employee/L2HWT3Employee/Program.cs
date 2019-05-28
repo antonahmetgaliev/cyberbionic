@@ -31,7 +31,7 @@ namespace L2HWT3Employee
                 str = Console.ReadLine();
                 if (!CheckDoub(str)) Console.WriteLine("Enter error!");
             } while (!CheckDoub(str));
-            var value = double.Parse(str);
+            var value = double.Parse(str ?? throw new InvalidOperationException());
             switch (doit)
             {
                 case 1:
