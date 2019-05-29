@@ -93,7 +93,7 @@ namespace L2HWT3Employee
 
                 var employee = new Employee();
                 StandardWorkers(employee);
-                int doit;
+                int doIt;
                 switch (access)
                 {
                     case "director":
@@ -107,8 +107,8 @@ namespace L2HWT3Employee
                                 "Change salary to the employee", "Show all workers", "Add new worker",
                                 "Change acces level"
                             };
-                            doit = menu.CreateMenuInt(body);
-                            switch (doit)
+                            doIt = menu.CreateMenuInt(body);
+                            switch (doIt)
                             {
                                 case 1:
                                     bool dirCheck;
@@ -117,7 +117,7 @@ namespace L2HWT3Employee
                                         Console.Clear();
                                         Console.WriteLine("The salary constant is now {0} USD",
                                             employee.Salary());
-                                        dirCheck = Director(employee, doit);
+                                        dirCheck = Director(employee, doIt);
                                     } while (!dirCheck);
 
                                     break;
@@ -127,7 +127,7 @@ namespace L2HWT3Employee
                                         Console.Clear();
                                         Console.WriteLine("Now the percentage of the director is {0}%",
                                             employee.DirPer());
-                                        dirCheck = Director(employee, doit);
+                                        dirCheck = Director(employee, doIt);
                                     } while (!dirCheck);
 
                                     break;
@@ -137,7 +137,7 @@ namespace L2HWT3Employee
                                         Console.Clear();
                                         Console.WriteLine("Now the percentage of the accountant is {0}%",
                                             employee.AccPer());
-                                        dirCheck = Director(employee, doit);
+                                        dirCheck = Director(employee, doIt);
                                     } while (!dirCheck);
 
                                     break;
@@ -147,7 +147,7 @@ namespace L2HWT3Employee
                                         Console.Clear();
                                         Console.WriteLine("Now the percentage of the employee is {0}%",
                                             employee.EmpPer());
-                                        dirCheck = Director(employee, doit);
+                                        dirCheck = Director(employee, doIt);
                                     } while (!dirCheck);
 
                                     break;
@@ -230,8 +230,8 @@ namespace L2HWT3Employee
                                 "What do you want to do?", "Change salary to the employee",
                                 "Show accountant and employe salary", "Change acces level"
                             };
-                            doit = menu.CreateMenuInt(body);
-                            switch (doit)
+                            doIt = menu.CreateMenuInt(body);
+                            switch (doIt)
                             {
                                 case 1:
                                     bool dirCheck;
@@ -240,7 +240,7 @@ namespace L2HWT3Employee
                                         Console.Clear();
                                         Console.WriteLine("Now the percentage of the employee is {0}%",
                                             employee.EmpPer());
-                                        dirCheck = Director(employee, doit);
+                                        dirCheck = Director(employee, doIt);
                                     } while (!dirCheck);
 
                                     break;
@@ -307,7 +307,7 @@ namespace L2HWT3Employee
                         Console.ReadKey();
                         break;
             }
-            } while (!levelCheck);
+            } while (true);
         }
     }
 }
