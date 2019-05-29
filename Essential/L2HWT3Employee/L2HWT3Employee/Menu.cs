@@ -2,9 +2,9 @@
 
 namespace L2HWT3Employee
 {
-    class Menu
+    internal class Menu
     {
-        private string Color(string str)
+        private static string Color(string str)
         {
             Console.BackgroundColor = ConsoleColor.Gray;
             Console.ForegroundColor = ConsoleColor.Black;
