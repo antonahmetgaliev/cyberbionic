@@ -13,7 +13,7 @@ namespace L2HWT3Employee
             Console.ForegroundColor = ConsoleColor.Gray;
             return str;
         }
-        private void Show(string str)
+        private static void Show(string str)
         {
             Console.WriteLine("- {0}", str);
         }
