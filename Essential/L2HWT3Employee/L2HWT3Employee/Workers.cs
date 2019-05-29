@@ -4,9 +4,9 @@
     {
         private readonly string _name;
         private readonly string _surname;
-        private string _position;
-        private double _experience;
-        private double _salary;
+        private readonly string _position;
+        private readonly double _experience;
+        private readonly double _salary;
 
         public Workers(string name, string surname, string position, double experience, double salary)
         {
