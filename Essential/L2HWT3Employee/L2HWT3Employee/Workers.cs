@@ -1,6 +1,6 @@
 ﻿namespace L2HWT3Employee
 {
-    class Workers
+    internal class Workers
     {
         private readonly string _name;
         private readonly string _surname;
