@@ -1,8 +1,8 @@
 ﻿namespace L2HWT3EmployeeV2
 {
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
         }
     }
