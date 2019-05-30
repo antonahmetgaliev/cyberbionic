@@ -1,15 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace L2HWT3EmployeeV2
 {
     public class Employee
     {
-        private readonly Salary _calculSalary;
+        private readonly Salary _calculatorSalary;
         private readonly string _name;
         private readonly string _surname;
         private string _position { get; set; }
-        private int _experience { get; set; }
+        private int _experience { get; }
         private double _salary;
 
         public string Position()
@@ -33,13 +34,14 @@ namespace L2HWT3EmployeeV2
             _salary = salary;
         }
 
-        public  Employee(string name, string surname, string position, int experience, int salary)
+        public  Employee(string name, string surname, string position, int experience, int salary, Salary calculatorSalary)
         {
             _name = name;
             _surname = surname;
             _position = position;
             _experience = experience;
             _salary = salary;
+            _calculatorSalary = calculatorSalary;
         }
 
         public List<string> ShowInfo()
@@ -50,14 +52,14 @@ namespace L2HWT3EmployeeV2
                 _surname,
                 _position,
                 Convert.ToString(_experience),
-                (Convert.ToString(_salary))
+                (Convert.ToString(_salary, CultureInfo.InvariantCulture))
             };
             return employees;
         }
 
         public override string ToString()
         {
-            return $"{nameof(_calculSalary)}: {_calculSalary}, {nameof(_name)}: {_name}, {nameof(_surname)}: {_surname}, {nameof(_salary)}: {_salary}, {nameof(_position)}: {_position}, {nameof(_experience)}: {_experience}";
+            return $"{nameof(_calculatorSalary)}: {_calculatorSalary}, {nameof(_name)}: {_name}, {nameof(_surname)}: {_surname}, {nameof(_salary)}: {_salary}, {nameof(_position)}: {_position}, {nameof(_experience)}: {_experience}";
         }
     }
 }
