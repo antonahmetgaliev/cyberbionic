@@ -10,11 +10,11 @@
 
         public Invoice(int account, string customer, string provider, int quantity, string article)
         {
-            this._account = account;
-            this._customer = customer;
-            this._provider = provider;
-            this._quantity = quantity;
-            this._article = article;
+            _account = account;
+            _customer = customer;
+            _provider = provider;
+            _quantity = quantity;
+            _article = article;
         }
     }
 }
