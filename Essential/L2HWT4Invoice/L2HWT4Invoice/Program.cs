@@ -1,6 +1,6 @@
 ﻿namespace L2HWT4Invoice
 {
-    class Program
+    internal class Program
     {
         static void Main()
         {
