@@ -6,7 +6,6 @@ namespace L10HWT2MyList
     {
         private static void Main()
         {
-            var a = new List<int>();
         }
     }
 }
