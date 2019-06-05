@@ -31,5 +31,14 @@ namespace MyListTests
             Assert.AreEqual(2, _target[1]);
             Assert.AreEqual(3, _target[2]);
         }
+
+        [TestMethod]
+        public void CountTest()
+        {
+            _target.Add(1);
+            _target.Add(2);
+            _target.Add(3);
+            Assert.AreEqual(3, _target.Count);
+        }
     }
 }

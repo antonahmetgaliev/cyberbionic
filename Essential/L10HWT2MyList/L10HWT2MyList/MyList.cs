@@ -40,5 +40,7 @@ namespace L10HWT2MyList
         }
 
         public object this[int i] => _items[i];
+
+        public int Count => _items.Length;
     }
 }
