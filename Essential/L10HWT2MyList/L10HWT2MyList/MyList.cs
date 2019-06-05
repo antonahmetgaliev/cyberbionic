@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace L10HWT2MyList
+﻿namespace L10HWT2MyList
 {
     public class MyList<T>
     {
@@ -10,11 +8,6 @@ namespace L10HWT2MyList
         public MyList()
         {
             _items = new T[0];
-        }
-
-        public MyList(int capacity)
-        {
-            _items = new T[capacity];
         }
 
         private void CopyToTempArray()
