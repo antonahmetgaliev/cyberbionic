@@ -35,9 +35,10 @@ namespace L10HWT2MyList
         public void Add(T item)
         {
             CopyToTempArray();
-            _tempArray[_tempArray.Length] = item;
-            CopyToTempArray();
+            _tempArray[_tempArray.Length-1] = item;
+            CopyItemsToMainArray();
         }
 
+        public object this[int i] => _items[i];
     }
 }
