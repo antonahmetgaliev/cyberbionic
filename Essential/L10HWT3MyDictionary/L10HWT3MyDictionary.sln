@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10HWT3MyDictionary", "L10H
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "L10HWT3MyDictionaryTests", "L10HWT3MyDictionaryTests\L10HWT3MyDictionaryTests.csproj", "{B32B9983-4FB9-411A-B8BA-6D1A55A694E1}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UnitTests", "UnitTests", "{3B27DEDE-AE74-4F2F-8251-4CF804EC055A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,9 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B32B9983-4FB9-411A-B8BA-6D1A55A694E1} = {3B27DEDE-AE74-4F2F-8251-4CF804EC055A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {613D7521-619B-43A3-B0C1-DEFEFC228FB8}
