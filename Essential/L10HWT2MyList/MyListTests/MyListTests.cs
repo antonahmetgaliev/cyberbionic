@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace MyListTests
 {
     [TestClass]
-    public class UnitTest1
+    public class MyListTests
     {
         private MyList<int> _target;
 
