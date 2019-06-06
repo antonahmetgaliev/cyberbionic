@@ -1,11 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace L10HWT3MyDictionary
 {
     public class MyDictionary<TKey, TValue>
     {
-        private List<TKey> _key;
-        private List<TValue> _value;
+        private readonly List<TKey> _key;
+        private readonly List<TValue> _value;
 
         public MyDictionary()
         {
@@ -17,6 +18,13 @@ namespace L10HWT3MyDictionary
         {
             _key.Add(key);
             _value.Add(value);
+        }
+
+        public string this[int i] => PropValue();
+
+        private string PropValue()
+        {
+            return Convert.ToString(_key) + " - " + Convert.ToString(_value);
         }
     }
 }

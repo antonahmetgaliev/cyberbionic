@@ -18,6 +18,7 @@ namespace L10HWT3MyDictionaryTests
         public void AddTest()
         {
             _target.Add(1, "1");
+            Assert.AreEqual("1 - 1", _target[0]);
         }
     }
 }
