@@ -20,11 +20,16 @@ namespace L10HWT3MyDictionary
             _value.Add(value);
         }
 
-        public string this[int i] => PropValue();
+        public string this[int i] => PropValue(i);
 
-        private string PropValue()
+        private string PropValue(int i)
         {
-            return Convert.ToString(_key) + " - " + Convert.ToString(_value);
+            return Convert.ToString(_key[i] + " - " + _value[i]);
+        }
+
+        public int Count()
+        {
+            return _key.Count;
         }
     }
 }
