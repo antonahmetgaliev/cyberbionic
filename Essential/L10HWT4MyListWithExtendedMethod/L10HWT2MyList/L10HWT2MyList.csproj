@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B4E3A117-5825-402E-943F-494D8A4F0F17}</ProjectGuid>
+    <ProjectGuid>{FE7ADA91-ABAA-4DC1-BC31-914698CA67A3}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>L10HWT3MyDictionary</RootNamespace>
-    <AssemblyName>L10HWT3MyDictionary</AssemblyName>
+    <RootNamespace>L10HWT2MyList</RootNamespace>
+    <AssemblyName>L10HWT2MyList</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -37,7 +37,8 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MyDictionary.cs" />
+    <Compile Include="ExtendedArray.cs" />
+    <Compile Include="MyList.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

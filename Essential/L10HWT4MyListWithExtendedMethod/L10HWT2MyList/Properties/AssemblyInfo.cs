@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("L10HWT3MyDictionary")]
+[assembly: AssemblyTitle("L10HWT2MyList")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("L10HWT3MyDictionary")]
+[assembly: AssemblyProduct("L10HWT2MyList")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("b4e3a117-5825-402e-943f-494d8a4f0f17")]
+[assembly: Guid("fe7ada91-abaa-4dc1-bc31-914698ca67a3")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,4 +1,6 @@
-﻿namespace L10HWT3MyDictionary
+﻿using System.Collections.Generic;
+
+namespace L10HWT2MyList
 {
     internal class Program
     {
