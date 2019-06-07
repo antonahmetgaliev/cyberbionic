@@ -2,15 +2,16 @@
 {
     public static class ExtendedArray<T>
     {
+        private static T[] _tempArray;
+
         public static T[] GetArray(MyList<T> list)
         {
-            var tempArray = new T[list.Count];
-            for (var i = 0; i < tempArray.Length; i++)
+            _tempArray = new T[list.Count];
+            for (var i = 0; i < _tempArray.Length; i++)
             {
-                tempArray[i] = (T) list[i];
+                _tempArray[i] = (T) list[i];
             }
-
-            return tempArray;
+            return _tempArray;
         }
     }
 }

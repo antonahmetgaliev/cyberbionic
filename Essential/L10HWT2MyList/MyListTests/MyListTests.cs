@@ -40,5 +40,14 @@ namespace MyListTests
             _target.Add(3);
             Assert.AreEqual(3, _target.Count);
         }
+
+        [TestMethod]
+        public void GetArrayTest()
+        {
+            _target.Add(1);
+            _target.Add(2);
+            _target.Add(3);
+            _target.GetArray();
+        }
     }
 }
